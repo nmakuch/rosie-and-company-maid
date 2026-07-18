@@ -1,0 +1,18 @@
+.errorMessage {
+    background-color: #ffeded;
+    padding: var(--spacing-100) 0 var(--spacing-100) var(--spacing-200);
+    font-weight: 500;
+    font-size: 16px;
+    margin: 0 0 var(--spacing-150) 0;
+    border-left: 3px solid #C2410C;
+    border-radius: 0 6px 6px 0;
+    display: flex;
+    align-items: center;
+}
+
+.errorMessage p {
+    color: #C2410C;
+    display: block;
+    line-height: 100%;
+    margin: 0 0 0 var(--spacing-100);
+}

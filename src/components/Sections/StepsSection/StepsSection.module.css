@@ -1,0 +1,9 @@
+.stepsContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stepsContainer p {
+    text-align: center;
+    text-wrap: balance;
+}

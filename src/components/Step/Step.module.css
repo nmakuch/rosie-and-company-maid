@@ -1,0 +1,22 @@
+.step {
+    width: 30%;
+    padding: var(--spacing-300);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 24px;
+    background-color: #ffffff;
+}
+
+.step h3,
+.step p,
+.step img {
+    width: 100%;
+}
+
+.step img {
+    margin-bottom: var(--spacing-400);
+}
+
+.step h3 {
+    font-size: 18px;
+    margin-bottom: var(--spacing-300);
+}

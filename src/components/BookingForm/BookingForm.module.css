@@ -1,0 +1,337 @@
+.stepIndicator {
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: var(--spacing-350);
+    color: #004CFF;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: "Inter", sans-serif;
+}
+
+.bookingForm {
+    padding: var(--spacing-1000);
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    width: 800px;
+    display: flex;
+    justify-content: center;
+}
+
+.bookingForm h1 {
+    text-align: center;
+    text-wrap: balance;
+    line-height: 130%;
+    font-size: 42px;
+    margin-top: var(--spacing-600);
+}
+
+.bookingForm h2 {
+    text-align: left;
+    text-wrap: balance;
+    margin-bottom: var(--spacing-300);
+}
+
+.bookingForm .intro {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: var(--spacing-1000);
+}
+
+.bookingForm .supportingText {
+    text-align: left;
+    text-wrap: balance;
+    margin-top: 0;
+    margin-bottom: var(--spacing-700);
+}
+
+.bookingForm label {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: var(--spacing-50);
+    color: #363636;
+}
+
+.bookingForm .hintText {
+    display: block;
+    font-size: 16px;
+    margin: 0 0 var(--spacing-50) 0;
+    color: #838282;
+}
+
+.bookingForm .formContainer {
+    width: 450px;
+}
+
+.inputContainer {
+    width: 100%;
+    margin-bottom: var(--spacing-1000);
+}
+
+.inputContainer:has(+ .inputContainer) {
+    margin-bottom: var(--spacing-400);
+}
+
+.actions {
+    margin-top: var(--spacing-400);
+}
+
+.bookingForm .inputContainer p {
+    display: block;
+    width: 100%;
+}
+
+.bookingForm .inputContainer input {
+    display: block;
+    font-size: 16px;
+    width: 100%;
+    padding: var(--spacing-200);
+    border: 2px solid #a3a3a3;
+    border-radius: 8px;
+}
+
+.bookingForm .inputContainer input[type="date"] {
+    font-family: "Google Sans", sans-serif;
+}
+
+.bookingForm fieldset.inputContainer {
+    border: none;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bookingForm legend {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    padding-inline: 0;
+    margin-bottom: var(--spacing-50);
+    color: #363636;
+}
+
+.bookingForm .buttonContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bookingForm .buttonContainer a,
+.bookingForm .formStep .buttonContainer button:first-of-type {
+    margin-right: var(--spacing-200);
+}
+
+.bookingForm .buttonContainer button,
+.bookingForm .buttonContainer a {
+    display: block;
+    width: 50%;
+    text-align: center;
+}
+
+.selectionGroup {
+    display: flex;
+    flex-direction: column;
+    margin-top: var(--spacing-300);
+    border: 1px solid #d9dee8;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.selectionOption {
+    position: relative;
+}
+
+.selectionOption:not(:last-child) {
+    border-bottom: 1px solid #d9dee8;
+}
+
+.selectionInput {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+
+.bookingForm .selectionLabel {
+    display: grid;
+    grid-template-columns: 24px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--spacing-200);
+    width: 100%;
+    min-height: 84px;
+    padding: var(--spacing-200) var(--spacing-250);
+    margin: 0;
+    cursor: pointer;
+    background-color: #ffffff;
+    transition:
+        background-color 150ms ease,
+        box-shadow 150ms ease;
+}
+
+.bookingForm .selectionLabelNoPrice {
+    grid-template-columns: 24px minmax(0, 1fr);
+}
+
+.selectionLabel:hover {
+    background-color: #f7f9ff;
+}
+
+.selectionControl {
+    position: relative;
+    display: block;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 2px solid #9ba5b5;
+    background-color: #ffffff;
+}
+
+.selectionInput[type="radio"]+.selectionLabel .selectionControl {
+    border-radius: 50%;
+}
+
+.selectionInput[type="checkbox"]+.selectionLabel .selectionControl {
+    border-radius: 4px;
+}
+
+.selectionContent {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.selectionTitle {
+    display: block;
+    color: #17233d;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-top: var(--spacing-75);
+}
+
+.selectionHint {
+    display: block;
+    margin-top: 2px;
+    color: #667085;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.selectionPrice {
+    display: block;
+    margin-left: var(--spacing-200);
+    color: #17233d;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.selectionInput[type="radio"]:checked+.selectionLabel .selectionControl {
+    border-color: #004cff;
+}
+
+.selectionInput[type="radio"]:checked+.selectionLabel .selectionControl::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    content: "";
+    border-radius: 50%;
+    background-color: #004cff;
+    transform: translate(-50%, -50%);
+}
+
+.selectionInput[type="checkbox"]:checked+.selectionLabel .selectionControl {
+    border-color: #004cff;
+    background-color: #004cff;
+}
+
+.selectionInput[type="checkbox"]:checked+.selectionLabel .selectionControl::after {
+    position: absolute;
+    top: 4px;
+    left: 7px;
+    width: 6px;
+    height: 11px;
+    content: "";
+    border-right: 2px solid #ffffff;
+    border-bottom: 2px solid #ffffff;
+    transform: rotate(45deg);
+}
+
+.selectionInput:focus-visible+.selectionLabel {
+    position: relative;
+    z-index: 1;
+    outline: 3px solid rgba(0, 76, 255, 0.3);
+    outline-offset: -3px;
+}
+
+.selectionInput:checked+.selectionLabel {
+    background-color: #f7f9ff;
+}
+
+.reviewTable {
+    margin-top: var(--spacing-700);
+    border: 1px solid #d9dee8;
+    border-radius: var(--spacing-300);
+    overflow: hidden;
+    background: var(--surface-secondary);
+    margin-bottom: var(--spacing-1000);
+}
+
+.reviewItem {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: var(--spacing-500);
+    padding: var(--spacing-300) var(--spacing-300);
+}
+
+.reviewItem:not(:last-child) {
+    border-bottom: 1px solid #d9dee8;
+}
+
+.reviewContent {
+    min-width: 0;
+}
+
+.reviewContent h3 {
+    margin: 0 0 var(--spacing-100);
+    font-size: var(--font-size-p-desktop);
+    font-weight: 600;
+}
+
+.reviewContent p {
+    margin: 0;
+    color: var(--text-color-secondary);
+    overflow-wrap: anywhere;
+}
+
+.editLink {
+    align-self: center;
+    padding: var(--spacing-100);
+    border: 0;
+    background: transparent;
+    color: #004cff;
+    font: inherit;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+}
+
+.editLink:hover {
+    text-decoration-thickness: 2px;
+}
+
+.editLink:focus-visible {
+    outline: 3px solid #004cff;
+    outline-offset: 3px;
+    border-radius: 2px;
+}

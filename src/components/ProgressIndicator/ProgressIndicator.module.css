@@ -1,0 +1,26 @@
+.progressIndicator {
+    width: 100%;
+    margin-bottom: var(--spacing-1200);
+}
+
+.stepText {
+    margin: 0 0 var(--spacing-200);
+    color: var(--text-color-secondary);
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.track {
+    width: 100%;
+    height: 4px;
+    overflow: hidden;
+    border-radius: 999px;
+    background-color: #e4e8f0;
+}
+
+.progress {
+    height: 100%;
+    border-radius: inherit;
+    background-color: #004cff;
+    transition: width 300ms ease;
+}

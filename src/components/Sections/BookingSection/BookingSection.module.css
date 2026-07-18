@@ -1,0 +1,10 @@
+.bookingSection {
+    padding: 100px 200px;
+    background-color: #f2f8fe;
+    text-align: left;
+}
+
+.bookingSection .formContainer {
+    display: flex;
+    justify-content: center;
+}

@@ -1,0 +1,47 @@
+.pricePreview {
+    margin-bottom: var(--spacing-1000);
+    background: var(--surface-secondary);
+    padding: var(--spacing-300);
+    border: 1px solid #d9dee8;
+    border-radius: 12px; 
+}
+
+.priceRow:first-of-type {
+    padding-top: 0;
+}
+
+.priceRow,
+.totalRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: var(--spacing-200) 0;
+}
+
+.priceRow {
+    border-bottom: 1px solid #d9dee8;
+}
+
+.priceRow span:last-child {
+    font-weight: 600;
+    text-align: right;
+}
+
+.total {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.totalRow {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.priceAddition {
+    margin-bottom: var(--spacing-600);
+}

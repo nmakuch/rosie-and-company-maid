@@ -1,0 +1,44 @@
+.primary {
+    padding: var(--spacing-250) var(--spacing-400);
+    font-size: var(--font-size-p-desktop);
+    border-radius: var(--spacing-200);
+    border: none;
+    background-color: #004CFF;
+    border: 3px solid #004CFF;
+    color: var(--text-color-light);
+    font-family: "Inter";
+    font-weight: 400;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    display: inline-block;
+    cursor: pointer;
+}
+
+a.primary,
+a.secondary {
+    text-decoration: none;
+}
+
+a:visited.primary {
+    color: var(--text-color-light);
+}
+
+.secondary {
+    padding: var(--spacing-250) var(--spacing-400);
+    font-size: var(--font-size-p-desktop);
+    border-radius: var(--spacing-200);
+    border: 3px solid #004CFF;
+    color: #004CFF;
+    font-family: "Inter";
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-family: "Inter";
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a:visited.secondary {
+    color: #004CFF;
+}

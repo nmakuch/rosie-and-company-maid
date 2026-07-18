@@ -1,0 +1,14 @@
+.centeredSection {
+    padding: 224px 0;
+    background-color: #f2f8fe;
+}
+
+.centeredSection h2,
+.centeredSection h3 {
+    text-align: center;
+}
+
+.centeredSection h2 {
+    margin-bottom: var(--spacing-1000);
+    line-height: var(--line-height-heading-desktop);
+}

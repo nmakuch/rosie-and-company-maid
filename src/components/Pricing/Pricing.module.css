@@ -1,0 +1,73 @@
+.pricing {
+    width: 30%;
+    padding: var(--spacing-500);
+    border-radius: 24px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pricing h3 {
+    font-size: 14px;
+    color: #004CFF;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 0;
+    line-height: 100%;
+    text-align: center;
+    font-family: "Inter", sans-serif;
+}
+
+.pricing .price {
+    font-size: 64px;
+    font-weight: 500;
+    line-height: 100%;
+    margin: var(--spacing-700) 0;
+    text-align: center;
+}
+
+.pricing .description {
+    text-align: left;
+    text-wrap: balance;
+    padding: var(--spacing-500) 0;
+    margin: 0;
+    border-bottom: 2px solid #dddddd;
+}
+
+.pricing .time {
+    margin: 0;
+    line-height: 100%;
+    text-align: center;
+    margin: 0 0 var(--spacing-400) 0;
+}
+
+.pricing button,
+.pricing a {
+    display: block;
+    text-align: center;
+    width: 100%;
+}
+
+.pricing ul {
+    padding: var(--spacing-600) 0 0 0;
+    list-style: none;
+    margin: 0;
+}
+
+.pricing ul li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-200);
+    line-height: 150%;
+}
+
+.pricing ul li svg {
+    margin-right: var(--spacing-200);
+    flex-shrink: 0;
+    overflow: visible;
+}
+
+.pricing ul li span {
+    padding-top: 1px;
+    letter-spacing: 0.15px;
+}

@@ -1,0 +1,31 @@
+.map {
+    background-image: url("/images/service_area/service-area.png");
+}
+
+.listContainer ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-600) 0 0 0;
+}
+
+.listContainer ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-350);
+    font-size: 20px;
+    line-height: 100%;
+    font-weight: 600;
+}
+
+.listContainer ul li:last-child {
+    margin-bottom: 0;
+}
+
+.listContainer ul li svg {
+    margin-right: var(--spacing-200);
+    overflow: visible;
+}
+
+.listContainer ul li span {
+    padding-top: 2px;
+}

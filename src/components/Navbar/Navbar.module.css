@@ -1,0 +1,41 @@
+.navbar {
+    width: 100%;
+    padding: var(--spacing-500) 0;
+    font-size: 16px;
+    font-family: "Google Sans Flex";
+    font-weight: 500;
+    position: relative;
+    z-index: 100;
+}
+
+.navContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navContent img {
+    display: block;
+    width: 225px;
+}
+
+.navContent ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navContent ul li {
+    margin-left: var(--spacing-900);
+}
+
+.navContent ul li:first-of-type {
+    margin-left: 0;
+}
+
+.navContent ul li a,
+.navContent ul li a:visited {
+    text-decoration: none;
+    color: var(--text-color-primary);
+}
