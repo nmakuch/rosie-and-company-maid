@@ -323,7 +323,10 @@ export default function BookingForm() {
                 )}
 
                 {step === BOOKING_STEPS.CONFIRMATION && (
-                    <ConfirmationStep onStartOver={startOver} />
+                    <ConfirmationStep
+                        onStartOver={startOver}
+                        email={booking.email}
+                    />
                 )}
             </div>
         </form>
