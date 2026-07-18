@@ -159,11 +159,6 @@ export default function BookingForm() {
             totalPrice: submittedTotalPrice,
         };
 
-        console.log(submittedBooking);
-
-        setEditingStep(null);
-        setStep(BOOKING_STEPS.CONFIRMATION);
-
         setIsSubmitting(true);
         setSubmitError(null);
 
@@ -173,7 +168,7 @@ export default function BookingForm() {
                 headers: {
                     "Content-Type": "application/json",
                 },
-                body: JSON.stringify(booking),
+                body: JSON.stringify(submittedBooking),
             });
 
             const result = await response.json();
@@ -185,7 +180,8 @@ export default function BookingForm() {
                 );
             }
 
-            setStep(10);
+            setEditingStep(null);
+            setStep(BOOKING_STEPS.CONFIRMATION);
         } catch (error) {
             const message =
                 error instanceof Error
