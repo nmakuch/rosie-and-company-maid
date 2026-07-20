@@ -1,3 +1,5 @@
 .bookAnywhere {
+    --image-offset: 300px;
+    --image-size: 90%;
     background-image: url("/images/book_anywhere/book-anywhere.png");
 }

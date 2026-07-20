@@ -1,9 +1,10 @@
 import styles from "./SplitSection.module.css";
-import Container from "../Container/Container";
 import Subheading from "../Subheading/Subheading";
+import Container from "../Container/Container";
 
 type SplitSectionProps = {
     subheading?: string;
+    bgColor?: "blue" | "white";
     heading: string;
     intro?: string;
     imageClassName?: string;
@@ -15,22 +16,35 @@ export default function SplitSection({
     heading,
     intro,
     imageClassName,
-    children
+    children,
+    bgColor = "white"
 }: SplitSectionProps) {
     return (
-        <section className={styles.splitSection}>
-            <div className={styles.textSide}>
-                <Container>
-                    <div className={styles.textContent}>
-                        {subheading && (<Subheading text={subheading} alignment="left" />)}
-                        <h2>{heading}</h2>
-                        {intro && <p className={styles.introP}>{intro}</p>}
-                        {children}
-                    </div>
-                </Container>
-            </div>
-
-            <div className={`${styles.imageSide} ${imageClassName ?? ""}`} />
+        <section
+            className={[
+                styles.splitSection,
+                imageClassName
+            ]
+                .filter(Boolean)
+                .join(" ")
+            }
+            style={{
+                backgroundColor:
+                    bgColor === "blue"
+                        ? "#f2f8fe"
+                        : "#ffffff",
+            }}
+        >
+            <Container>
+                <div className={styles.textContent}>
+                    {subheading && (<Subheading text={subheading} alignment="left" />)}
+                    <h1>{heading}</h1>
+                    {intro && (<p className={styles.introP}>
+                        {intro}
+                    </p>)}
+                    {children}
+                </div>
+            </Container>
         </section>
     );
 }

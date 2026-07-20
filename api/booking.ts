@@ -5,8 +5,6 @@ import type {
 
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export default async function handler(
     request: VercelRequest,
     response: VercelResponse
@@ -18,6 +16,18 @@ export default async function handler(
     }
 
     try {
+        const apiKey = process.env.RESEND_API_KEY;
+
+        if (!apiKey) {
+            console.error("RESEND_API_KEY is missing.");
+
+            return response.status(500).json({
+                message: "Email service is not configured.",
+            });
+        }
+
+        const resend = new Resend(apiKey);
+
         const booking = request.body;
 
         const addOnsHtml =
