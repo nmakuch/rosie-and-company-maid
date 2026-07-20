@@ -1,7 +1,7 @@
 .navbar {
     width: 100%;
     padding: var(--spacing-500) 0;
-    font-size: 16px;
+    font-size: 14px;
     font-family: "Google Sans Flex";
     font-weight: 500;
     position: relative;
@@ -27,7 +27,7 @@
 }
 
 .navContent ul li {
-    margin-left: var(--spacing-900);
+    margin-left: var(--spacing-700);
 }
 
 .navContent ul li:first-of-type {

@@ -20,8 +20,9 @@ p {
 h1 {
     font-size: var(--font-size-h1-desktop);
     margin: 0 0 var(--spacing-400) 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Google Sans", sans-serif;
     font-weight: 600;
+    letter-spacing: -2px;
 }
 
 h2 {

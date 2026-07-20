@@ -1,39 +1,10 @@
 .hero {
-    position: relative;
-    height: 750px;
-    max-width: 100%;
-    background-image: url("/images/hero/hero-bg-4.png");
-    background-size: 100%;
-    /* ^^^^ modify background-size in media query to adjust negative space for text overlay */
-    background-position: center;
-    background-repeat: no-repeat;
+    --image-offset: 420px;
+    --image-size: 80%;
+    background-image: url("/images/hero/hero.png");
+}
+
+.buttonContainer {
     display: flex;
-    align-items: center;
-}
-
-.heroContent {
-    position: relative;
-    width: 600px;
-    text-wrap: balance;
-    z-index: 1;
-}
-
-.heroContent h1 {
-    display: block;
-    font-size: 50px;
-    color: var(--text-color-primary);
-    line-height: var(--line-height-heading-desktop);
-    font-weight: 600;
-    margin-top: 0;
-    margin-bottom: var(--spacing-400);
-}
-
-.heroContent p {
-    margin: 0 0 var(--spacing-500) 0;
-    font-size: var(--font-size-p-desktop);
-}
-
-.heroContent button:first-of-type,
-.heroContent a:first-of-type {
-    margin-right: var(--spacing-200);
+    gap: var(--spacing-200);
 }

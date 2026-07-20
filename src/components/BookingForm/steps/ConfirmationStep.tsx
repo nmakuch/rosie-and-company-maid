@@ -19,8 +19,7 @@ export default function ConfirmationStep({
             <h2>Your booking request has been received</h2>
 
             <p className={styles.supportingText}>
-                We've received your cleaning request and
-                sent a confirmation email to{" "}
+                We've received your cleaning request
                 <strong>{email}</strong>. We'll contact you
                 shortly to confirm your requested appointment.
             </p>

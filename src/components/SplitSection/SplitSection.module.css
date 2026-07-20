@@ -1,34 +1,39 @@
 .splitSection {
+    position: relative;
+    isolation: isolate;
     display: flex;
-    align-items: stretch;
-    min-height: 620px;
-}
+    align-items: center;
+    min-height: 680px;
+    overflow: hidden;
 
-.textSide {
-    width: 50%;
-    padding-left: max(32px, calc((100vw - 1280px) / 2));
-    box-sizing: border-box;
+    background-repeat: no-repeat;
+    background-position: calc(50% + var(--image-offset, min(25vw, 320px))) center;
+    background-size: auto var(--image-size, 80%);
 }
 
 .textContent {
-    padding: 224px 80px 224px 0;
+    max-width: 640px;
+    padding: 196px 80px 196px 0;
 }
 
-.imageSide {
-    width: 50%;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
 
 /* Typography */
-
-.textContent h2 {
-    text-wrap: balance;
+.textContent h1 {
     line-height: var(--line-height-heading-desktop);
+    text-wrap: balance;
 }
 
 .introP {
-    margin: 0;
+    margin: 0 0 var(--spacing-500) 0;
     text-wrap: balance;
+}
+
+.splitSection .buttonContainer {
+    display: flex;
+    gap: var(--spacing-200);
+}
+
+.splitSection button {
+    display: block;
+    margin-right: var(--spacing-200);
 }
