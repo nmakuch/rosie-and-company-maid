@@ -7,6 +7,7 @@ type CenteredSectionProps = {
     heading: string;
     children: React.ReactNode;
     className?: string;
+    id: string;
 };
 
 export default function CenteredSection({
@@ -14,9 +15,13 @@ export default function CenteredSection({
     heading,
     children,
     className = "",
+    id
 }: CenteredSectionProps) {
     return (
-        <section className={`${styles.centeredSection} ${className}`}>
+        <section
+            className={`${styles.centeredSection} ${className}`}
+            id={id}
+        >
             <Container>
                 {subheading && (<Subheading alignment="center" text={subheading} />)}
 

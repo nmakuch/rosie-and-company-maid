@@ -7,6 +7,7 @@ export default function StepsSection() {
         <CenteredSection
             subheading="Simple, convenient, stress-free"
             heading="Get a clean home in three easy steps"
+            id="how-it-works"
         >
             <div className={styles.stepsContainer}>
                 <Step

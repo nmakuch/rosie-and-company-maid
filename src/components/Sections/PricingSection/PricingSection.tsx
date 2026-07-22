@@ -7,6 +7,7 @@ export default function PricingSection() {
         <CenteredSection
             subheading="Professional cleaning, fair prices"
             heading="Choose the perfect cleaning package"
+            id="pricing"
         >
             <div className={styles.pricingContainer}>
                 <Pricing
