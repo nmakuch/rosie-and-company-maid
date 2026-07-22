@@ -84,13 +84,6 @@ export default function Navbar() {
             >
                 <div className={styles.modalContent}>
                     <div className={styles.modalHeader}>
-                        <Link to="/" onClick={closeMenu}>
-                            <img
-                                src="/images/logo/RosieLogo-WhiteOutline.png"
-                                alt="Rosie & Company"
-                            />
-                        </Link>
-
                         <button
                             type="button"
                             className={styles.closeButton}

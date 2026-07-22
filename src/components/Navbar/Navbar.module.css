@@ -78,8 +78,8 @@
     margin: 0;
     padding: 0;
     border: 0;
-    background: #004cff;
-    color: #fff;
+    background: #ffffff;
+    color: #000;
     font-family: "Google Sans Flex", sans-serif;
 }
 
@@ -95,14 +95,14 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    padding: var(--spacing-500) 32px;
+    padding: var(--spacing-300) var(--spacing-400);
     box-sizing: border-box;
 }
 
 .modalHeader {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
 }
 
 .modalHeader img {
@@ -117,7 +117,7 @@
     padding: 0;
     border: 0;
     background: transparent;
-    color: #fff;
+    color: #000;
     cursor: pointer;
 }
 
@@ -143,11 +143,11 @@
     display: flex;
     flex: 1;
     flex-direction: column;
-    justify-content: center;
     gap: var(--spacing-500);
     margin: 0;
-    padding: var(--spacing-700) 0;
+    padding: var(--spacing-500) 0;
     list-style: none;
+    text-align: right;
 }
 
 .mobileNav li {
@@ -156,10 +156,10 @@
 
 .mobileNav a,
 .mobileNav a:visited {
-    color: #fff;
+    color: #000;
     font-family: "Google Sans Flex", sans-serif;
-    font-size: clamp(28px, 9vw, 42px);
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: 500;
     line-height: 1.1;
     text-decoration: none;
 }
