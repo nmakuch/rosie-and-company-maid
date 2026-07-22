@@ -1,27 +1,27 @@
 .pricing {
     width: 30%;
     padding: var(--spacing-500);
-    border-radius: 24px;
+    border-radius: 1.5rem;
     background-color: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .pricing h3 {
-    font-size: 14px;
+    font-size: 0.875rem;
     color: #004CFF;
     text-transform: uppercase;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 0.063rem;
     margin: 0;
-    line-height: 100%;
+    line-height: var(--line-height-heading);
     text-align: center;
     font-family: "Inter", sans-serif;
 }
 
 .pricing .price {
-    font-size: 64px;
+    font-size: 4rem;
     font-weight: 500;
-    line-height: 100%;
+    line-height: var(--line-height-heading);
     margin: var(--spacing-700) 0;
     text-align: center;
 }
@@ -32,13 +32,6 @@
     padding: var(--spacing-500) 0;
     margin: 0;
     border-bottom: 2px solid #dddddd;
-}
-
-.pricing .time {
-    margin: 0;
-    line-height: 100%;
-    text-align: center;
-    margin: 0 0 var(--spacing-400) 0;
 }
 
 .pricing button,
@@ -58,7 +51,7 @@
     display: flex;
     align-items: flex-start;
     margin-bottom: var(--spacing-200);
-    line-height: 150%;
+    line-height: var(--line-height-p);
 }
 
 .pricing ul li svg {
@@ -68,6 +61,6 @@
 }
 
 .pricing ul li span {
-    padding-top: 1px;
-    letter-spacing: 0.15px;
+    padding-top: 0.063rem;
+    letter-spacing: 0.009rem;
 }

@@ -10,6 +10,7 @@ type SplitSectionProps = {
     imageClassName?: string;
     children?: React.ReactNode;
     id: string;
+    headingLevel: "h1" | "h2";
 };
 
 export default function SplitSection({
@@ -19,17 +20,19 @@ export default function SplitSection({
     imageClassName,
     children,
     bgColor = "white",
+    headingLevel = "h2",
     id
 }: SplitSectionProps) {
+    const HeadingTag = headingLevel
     return (
         <section
             className={[
                 styles.splitSection,
-                imageClassName
+                imageClassName ? styles.hasImage : undefined,
+                imageClassName,
             ]
                 .filter(Boolean)
-                .join(" ")
-            }
+                .join(" ")}
             style={{
                 backgroundColor:
                     bgColor === "blue"
@@ -41,7 +44,7 @@ export default function SplitSection({
             <Container>
                 <div className={styles.textContent}>
                     {subheading && (<Subheading text={subheading} alignment="left" />)}
-                    <h1>{heading}</h1>
+                    <HeadingTag>{heading}</HeadingTag>
                     {intro && (<p className={styles.introP}>
                         {intro}
                     </p>)}

@@ -2,8 +2,8 @@
     margin-bottom: var(--spacing-1000);
     background: var(--surface-secondary);
     padding: var(--spacing-300);
-    border: 1px solid #d9dee8;
-    border-radius: 12px; 
+    border: 0.063rem solid #d9dee8;
+    border-radius: 0.75rem; 
 }
 
 .priceRow:first-of-type {
@@ -19,17 +19,12 @@
 }
 
 .priceRow {
-    border-bottom: 1px solid #d9dee8;
+    border-bottom: 0.063rem solid #d9dee8;
 }
 
 .priceRow span:last-child {
     font-weight: 600;
     text-align: right;
-}
-
-.total {
-    font-size: 1.125rem;
-    font-weight: 700;
 }
 
 .totalRow {
@@ -38,7 +33,7 @@
     align-items: center;
     padding-top: 0;
     padding-bottom: 0;
-    font-size: 24px;
+    font-size: var(--font-size-total-desktop);
     font-weight: 700;
 }
 

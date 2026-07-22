@@ -12,6 +12,7 @@ export default function Hero() {
             intro="Rosie & Company helps keep homes fresh, clean, and welcoming throughout Toronto's west end. Proudly serving Liberty Village, High Park, and Etobicoke, we provide reliable, detail-oriented cleaning so you can spend less time cleaning and more time relaxing."
             imageClassName={styles.hero}
             bgColor="blue"
+            headingLevel="h1"
         >
             <div className={styles.buttonContainer}>
                 <Button to="/booking" variant="primary">Book now</Button>

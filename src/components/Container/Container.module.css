@@ -1,18 +1,21 @@
 .container {
     width: 100%;
-    max-width: 1480px;
+    max-width: 92.5rem;
+    /* 1480px */
     margin: 0 auto;
     padding-inline: var(--spacing-400);
     box-sizing: border-box;
 }
 
-@media (min-width: 757px) {
+/* min-width: 757px */
+@media (min-width: 47.313rem) {
     .container {
         padding-inline: var(--spacing-800);
     }
 }
 
-@media (min-width: 1200px) {
+/* min-width: 1200px */
+@media (min-width: 75rem) {
     .container {
         padding-inline: var(--spacing-1600);
     }

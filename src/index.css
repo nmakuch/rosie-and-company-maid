@@ -49,21 +49,24 @@
     --font-size-caption-mobile: 0.75rem;
     /* 12px */
 
-    /* ----------------------
-    Desktop Line Heights
-    ------------------------ */
-    --line-height-p-desktop: 1.6;
-    /* 160% */
-    --line-height-heading-desktop: 1.25;
-    /* 130% */
+
 
     /* ----------------------
-    Mobile Line Heights
+    Component specific font sizing
     ------------------------ */
-    --line-height-p-mobile: 1.6;
+    --font-size-footer: 0.875rem;
+    --font-size-nav-desktop: 0.875rem;
+    --font-size-nav-mobile: 1.5rem;
+    --font-size-total-desktop: 1.5rem;
+
+    /* ----------------------
+  Line Heights
+    ------------------------ */
+    --line-height-p: 1.7;
     /* 160% */
-    --line-height-heading-mobile: 1.3;
+    --line-height-heading: 1.25;
     /* 130% */
+
 
 
     /* ----------------------

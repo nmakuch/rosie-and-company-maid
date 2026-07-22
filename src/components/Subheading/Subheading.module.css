@@ -1,11 +1,12 @@
 .subheading {
     text-transform: uppercase;
     margin-top: 0;
-    margin-bottom: var(--spacing-350);
+    margin-bottom: var(--spacing-200);
     color: #004CFF;
+    font-size: 0.875rem;
     font-weight: 700;
-    letter-spacing: 2px;
-    font-family: "Inter", sans-serif;
+    letter-spacing: 0.125rem;
+    font-family: "Google Sans", sans-serif;
 }
 
 .left {
@@ -18,4 +19,11 @@
 
 .right {
     text-align: right;
+}
+
+/* min-width: 550px */
+@media (min-width: 34.375rem) {
+    .subheading {
+        font-size: var(--font-size-p-desktop);
+    }
 }

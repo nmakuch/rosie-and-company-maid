@@ -1,10 +1,40 @@
 .hero {
-    --image-offset: 420px;
-    --image-size: 80%;
-    background-image: url("/images/hero/hero.png");
+    --image-space-mobile: var(--spacing-1000);
+    background-image: none;
 }
 
 .buttonContainer {
     display: flex;
     gap: var(--spacing-200);
+    margin-top: var(--spacing-400);
+}
+
+/* min-width: 550px */
+@media (min-width: 34.375rem) {
+    .mobileHero {
+        width: 90%;
+    }
+}
+
+/* min-width: 900px */
+@media (min-width: 56.25rem) {
+    .hero {
+        --image-offset: clamp(35rem,
+                calc(61.25rem - 45vw),
+                48.75rem);
+        --image-size: 80%;
+
+        background-image:
+            url("/images/hero/hero.png");
+    }
+}
+
+/* min-width: 1200px */
+@media (min-width: 75rem) {
+    .hero {
+        --image-offset: clamp(27.5rem,
+                calc(63.75rem - 45vw),
+                51.25rem);
+        --image-size: 90%;
+    }
 }

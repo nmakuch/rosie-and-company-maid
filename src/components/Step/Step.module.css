@@ -1,8 +1,8 @@
 .step {
     width: 30%;
     padding: var(--spacing-300);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 24px;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
+    border-radius: 1.5rem;
     background-color: #ffffff;
 }
 
@@ -17,6 +17,6 @@
 }
 
 .step h3 {
-    font-size: 18px;
+    font-size: 1.125rem;
     margin-bottom: var(--spacing-300);
 }

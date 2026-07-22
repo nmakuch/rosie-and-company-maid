@@ -2,29 +2,31 @@
     position: relative;
     isolation: isolate;
     display: flex;
-    align-items: center;
-    min-height: 680px;
+    align-items: flex-start;
+    min-height: auto;
     overflow: hidden;
 
     background-repeat: no-repeat;
-    background-position: calc(50% + var(--image-offset, min(25vw, 320px))) center;
-    background-size: auto var(--image-size, 80%);
+    background-position: center bottom 1.5rem;
+    background-size:
+        var(--image-size-mobile, auto 17.5rem);
 }
 
 .textContent {
-    max-width: 640px;
-    padding: 196px 80px 196px 0;
+    width: 40rem;
+    max-width: 100%;
+    padding: var(--spacing-1000) 0;
 }
 
+.hasImage .textContent {
+    padding-bottom:
+        var(--image-space-mobile, 22.5rem);
+}
 
 /* Typography */
-.textContent h1 {
-    line-height: var(--line-height-heading-desktop);
-    text-wrap: balance;
-}
 
 .introP {
-    margin: 0 0 var(--spacing-500) 0;
+    margin: 0;
     text-wrap: balance;
 }
 
@@ -36,4 +38,25 @@
 .splitSection button {
     display: block;
     margin-right: var(--spacing-200);
+}
+
+/* Tablet and small desktop */
+
+/* min-width: 900px */
+@media (min-width: 56.25rem) {
+    .splitSection {
+        align-items: center;
+        min-height: 42.5rem;
+        background-position:
+            calc(50% + var(--image-offset)) center;
+        background-size:
+            auto var(--image-size);
+    }
+
+    .textContent,
+    .hasImage .textContent {
+        padding: 12.25rem var(--spacing-1000) 12.25rem 0;
+        width: 40rem;
+        box-sizing: border-box;
+    }
 }

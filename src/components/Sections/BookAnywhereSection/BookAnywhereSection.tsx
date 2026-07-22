@@ -6,10 +6,17 @@ export default function BookAnywhereSection() {
         <SplitSection
             id="book-anywhere"
             subheading="Fast, flexible online booking"
-            heading="Booking on the go, from anywhere"
+            heading="Book your next cleaning on the go, from anywhere."
             intro="Our responsive booking system makes it easy to schedule a cleaning from your phone, tablet, or desktop. Build a plan that fits your home with our customizable services, and book with confidence knowing you can make changes. We offer free cancellations with at least 24 hours’ notice, giving you added flexibility."
             imageClassName={styles.bookAnywhere}
-            children={null}
-        />
+            headingLevel="h2"
+        >
+            <img
+                className={styles.mobileBookAnywhere}
+                src="/images/book_anywhere/book-anywhere-mobile.png"
+                alt=""
+                loading="lazy"
+            />
+        </SplitSection>
     )
 } 

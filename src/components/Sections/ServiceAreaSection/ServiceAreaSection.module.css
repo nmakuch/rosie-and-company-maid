@@ -1,31 +1,57 @@
 .map {
-    background-image: url("/images/service_area/service-area-2.png");
+    --image-space-mobile: var(--spacing-1000);
+    background-image: none;
 }
 
-.listContainer ul {
-    list-style: none;
-    padding: 0;
-    margin: var(--spacing-600) 0 0 0;
+.mobileMap {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: var(--spacing-600);
 }
 
-.listContainer ul li {
-    display: flex;
-    align-items: center;
-    margin-bottom: var(--spacing-350);
-    font-size: 20px;
-    line-height: 100%;
-    font-weight: 600;
+.neighborhoods {
+    width: 100%;
 }
 
-.listContainer ul li:last-child {
-    margin-bottom: 0;
+/* min-width: 550px */
+@media (min-width: 34.375rem) {
+    .mobileMap {
+        width: 100%;
+    }
 }
 
-.listContainer ul li svg {
-    margin-right: var(--spacing-200);
-    overflow: visible;
+/* min-width: 900px */
+@media (min-width: 56.25rem) {
+    .mobileMap {
+        display: none;
+    }
+
+    .map {
+        --image-offset: clamp(12.5rem,
+                calc(48.75rem - 45vw),
+                36.25rem);
+        --image-size: 60%;
+
+        background-image:
+            url("/images/service_area/service-area.png");
+    }
+
+    .neighborhoods {
+        width: 70%;
+    }
 }
 
-.listContainer ul li span {
-    padding-top: 2px;
+/* min-width: 1200px */
+@media (min-width: 75rem) {
+    .map {
+        --image-offset: clamp(22.5rem,
+                calc(56.25rem - 45vw),
+                43.75rem);
+        --image-size: 90%;
+    }
+
+    .neighborhoods {
+        width: 28.125rem;
+    }
 }
