@@ -3,7 +3,7 @@
     z-index: 100;
     width: 100%;
     padding: var(--spacing-300) 0;
-    font-family: "Google Sans Flex";
+    font-family: "Google Sans Flex", sans-serif;
     font-size: 14px;
     font-weight: 500;
 }
@@ -80,6 +80,7 @@
     border: 0;
     background: #004cff;
     color: #fff;
+    font-family: "Google Sans Flex", sans-serif;
 }
 
 .mobileDialog::backdrop {
@@ -156,6 +157,7 @@
 .mobileNav a,
 .mobileNav a:visited {
     color: #fff;
+    font-family: "Google Sans Flex", sans-serif;
     font-size: clamp(28px, 9vw, 42px);
     font-weight: 600;
     line-height: 1.1;
