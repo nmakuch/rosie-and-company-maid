@@ -9,6 +9,7 @@ type SplitSectionProps = {
     intro?: string;
     imageClassName?: string;
     children?: React.ReactNode;
+    id: string;
 };
 
 export default function SplitSection({
@@ -17,7 +18,8 @@ export default function SplitSection({
     intro,
     imageClassName,
     children,
-    bgColor = "white"
+    bgColor = "white",
+    id
 }: SplitSectionProps) {
     return (
         <section
@@ -34,6 +36,7 @@ export default function SplitSection({
                         ? "#f2f8fe"
                         : "#ffffff",
             }}
+            id={id}
         >
             <Container>
                 <div className={styles.textContent}>

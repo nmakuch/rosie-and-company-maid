@@ -4,7 +4,6 @@ import CheckmarkIcon from "./CheckmarkIcon";
 import FacebookIcon from "./FacebookIcon";
 import InstagramIcon from "./InstagramIcon";
 import LinkedInIcon from "./LinkedInIcon";
-import MapPinIcon from "./MapPinIcon";
 import ErrorIcon from "./ErrorIcon";
 
 const icons = {
@@ -12,7 +11,6 @@ const icons = {
     facebook: FacebookIcon,
     instagram: InstagramIcon,
     linkedin: LinkedInIcon,
-    mapPin:  MapPinIcon,
     error: ErrorIcon
 };
 
