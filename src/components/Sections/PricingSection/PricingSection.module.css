@@ -1,4 +1,33 @@
 .pricingContainer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-400);
+    align-items: stretch;
+}
+
+/* 706px and wider */
+@media (min-width: 44.125rem) {
+    .pricingContainer {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--spacing-500);
+    }
+
+    .pricingContainer > :last-child {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: calc((100% - var(--spacing-500)) / 2);
+    }
+}
+
+/* 1280px and wider */
+@media (min-width: 80.625rem) {
+    .pricingContainer {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .pricingContainer > :last-child {
+        grid-column: auto;
+        justify-self: stretch;
+        width: 100%;
+    }
 }

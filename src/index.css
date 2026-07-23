@@ -6,16 +6,31 @@
     --text-color-light: #ffffff;
     --text-color-error: #C2410C;
     --accent-color: #004CFF;
+
     --button-color-primary: #004CFF;
+    --button-color-primary-hover: #003dcc;
+    --button-color-primary-active: #0033ad;
+    --button-text-color-primary: #ffffff;
+    --button-border-color-primary: #004CFF;
+    --button-border-color-primary-hover: #003dcc;
+    --button-border-color-primary-active: #0033ad;
+
+    --button-color-secondary-hover: #dbe7ff;
+    --button-color-secondary-active: #bdd0fa;
     --button-text-color-secondary: #004CFF;
+    --button-text-color-secondary-hover: #003dcc;
+    --button-text-color-secondary-active: #0033ad;
     --button-border-color-secondary: #004CFF;
-    --button-border-color: #004CFF;
+    --button-border-color-secondary-hover: #003dcc;
+    --button-border-color-secondary-active: #0033ad;
+
     --form-label-color: #363636;
     --border-color-light: #d9dee8;
     --border-color-input: #a3a3a3;
     --text-color-hint: #838282;
     --bg-blue: #f2f8fe;
     --bg-error-message: #ffeded;
+    --focus-outline-color: #80a6ff;
 
     /* ----------------------
     Desktop font sizing

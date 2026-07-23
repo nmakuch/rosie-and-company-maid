@@ -40,6 +40,16 @@
     align-items: center;
     justify-content: center;
     margin: 0;
+    cursor: pointer;
+}
+
+.socialMedia a svg circle {
+    fill: transparent;
+    transition: fill 150ms ease;
+}
+
+.socialMedia a:hover svg circle {
+    fill: var(--button-color-secondary-hover);
 }
 
 .ctaContainer .socialMedia a:first-of-type {
@@ -60,6 +70,7 @@
 
 .backToTop {
     padding: var(--spacing-200);
+    cursor: pointer;
     border: 0.125rem solid var(--text-color-primary);
     background-color: transparent;
     border-radius: 0.375rem;
@@ -159,8 +170,7 @@
     }
 
     .backToTop:hover {
-        background: var(--text-color-primary);
-        color: #fff;
+        background: var(--button-color-secondary-hover);
     }
 
     .ctaContainer img {

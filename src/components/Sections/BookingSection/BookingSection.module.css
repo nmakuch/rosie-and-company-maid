@@ -1,5 +1,6 @@
 .bookingSection {
-    padding: 6.25rem 12.5rem;
+    box-sizing: border-box;
+    padding: 4rem var(--spacing-200);
     background-color: var(--bg-blue);
     text-align: left;
 }
@@ -7,4 +8,21 @@
 .bookingSection .formContainer {
     display: flex;
     justify-content: center;
+    width: 100%;
+    max-width: 80rem;
+    margin-inline: auto;
+}
+
+/* 550px and wider */
+@media (min-width: 34.375rem) {
+    .bookingSection {
+        padding: 5rem var(--spacing-400);
+    }
+}
+
+/* 1080px and wider */
+@media (min-width: 67.5rem) {
+    .bookingSection {
+        padding-block: 6.25rem;
+    }
 }

@@ -8,8 +8,8 @@ export default function StartStep({
     return (
         <div className={styles.startPage}>
             <img
+                className={styles.startImage}
                 src="/images/booking_form/booking-form-start.png"
-                width="450"
                 alt=""
             />
 

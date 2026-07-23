@@ -1,10 +1,24 @@
+.primary,
+.secondary {
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease,
+        color 150ms ease;
+}
+
+.primary:focus-visible,
+.secondary:focus-visible {
+    outline: 0.188rem solid var(--focus-outline-color);
+    outline-offset: 0.188rem;
+}
+
 .primary {
     padding: var(--spacing-250) var(--spacing-400);
     font-size: var(--font-size-p-desktop);
     border-radius: var(--spacing-200);
     border: none;
     background-color: var(--button-color-primary);
-    border: 0.188rem solid var(--button-border-color);
+    border: 0.188rem solid var(--button-border-color-primary);
     color: var(--text-color-light);
     font-family: "Inter";
     font-weight: 400;
@@ -14,11 +28,21 @@
     cursor: pointer;
 }
 
+.primary:hover {
+    background-color: var(--button-color-primary-hover);
+    border-color: var(--button-border-color-primary-hover);
+}
+
+.primary:active {
+    background-color: var(--button-color-primary-active);
+    border-color: var(--button-border-color-primary-active);
+}
+
 .secondary {
     padding: var(--spacing-250) var(--spacing-400);
     font-size: var(--font-size-p-desktop);
     border-radius: var(--spacing-200);
-    border: 0.188rem solid var(--button-border-color);
+    border: 0.188rem solid var(--button-border-color-secondary);
     color: var(--button-text-color-secondary);
     font-family: "Inter";
     font-weight: 600;
@@ -28,6 +52,20 @@
     display: inline-block;
     background-color: transparent;
     cursor: pointer;
+}
+
+.secondary:hover,
+a.secondary:visited:hover {
+    color: var(--button-border-color-secondary-hover);
+    background-color: var(--button-color-secondary-hover);
+    border-color: var(--button-border-color-secondary-hover);
+}
+
+.secondary:active,
+a.secondary:visited:active {
+    background-color: var(--button-color-secondary-active);
+    border-color: var(--button-border-color-secondary-active);
+    color: var(--button-text-color-secondary-active);
 }
 
 a.primary,
@@ -40,7 +78,7 @@ a.secondary {
 }
 
 a:visited.primary {
-    color: var(--text-color-light);
+    color: var(--button-text-color-primary);
 }
 
 a:visited.secondary {

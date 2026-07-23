@@ -1,65 +1,56 @@
 .bookingForm {
-    padding: var(--spacing-1000);
-    border-radius: 1.5rem;
-    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    width: 50rem;
+    box-sizing: border-box;
     display: flex;
     justify-content: center;
+    width: 100%;
+    margin-inline: auto;
+    padding: var(--spacing-300);
+    border-radius: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.1);
 }
 
 .bookingForm h1 {
+    margin-top: var(--spacing-400);
     text-align: center;
-    margin-top: var(--spacing-600);
+    text-wrap: balance;
 }
 
 .bookingForm h2 {
-    text-align: left;
     margin-bottom: var(--spacing-300);
+    text-align: left;
+    text-wrap: balance;
 }
 
 .bookingForm .intro {
-    text-align: center;
     margin-top: 0;
-    margin-bottom: var(--spacing-1000);
+    margin-bottom: var(--spacing-700);
+    text-align: center;
+    text-wrap: balance;
 }
 
 .bookingForm .supportingText {
-    text-align: left;
-    text-wrap: balance;
     margin-top: 0;
-    margin-bottom: var(--spacing-700);
-}
-
-.bookingForm label {
-    display: block;
-    font-size: 1.125rem;
-    font-weight: 700;
-    margin-bottom: var(--spacing-50);
-    color: var(--form-label-color);
-}
-
-.bookingForm .hintText {
-    display: block;
-    margin: 0 0 var(--spacing-50) 0;
-    color: var(--text-color-hint);
+    margin-bottom: var(--spacing-500);
+    text-align: left;
+    text-wrap: pretty;
 }
 
 .bookingForm .formContainer {
-    width: 28.125rem;
+    width: 100%;
+    max-width: 28.125rem;
+    min-width: 0;
 }
+
+/* Form fields */
 
 .inputContainer {
     width: 100%;
-    margin-bottom: var(--spacing-1000);
+    margin-bottom: var(--spacing-700);
 }
 
 .inputContainer:has(+ .inputContainer) {
     margin-bottom: var(--spacing-400);
-}
-
-.actions {
-    margin-top: var(--spacing-400);
 }
 
 .bookingForm .inputContainer p {
@@ -67,14 +58,31 @@
     width: 100%;
 }
 
-.bookingForm .inputContainer input {
+.bookingForm label {
     display: block;
-    font-size: var(--font-size-p-desktop);
+    margin-bottom: var(--spacing-50);
+    color: var(--form-label-color);
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.bookingForm .hintText {
+    display: block;
+    margin: 0 0 var(--spacing-50);
+    color: var(--text-color-hint);
+}
+
+.bookingForm .inputContainer input {
+    box-sizing: border-box;
+    display: block;
     width: 100%;
+    max-width: 100%;
+    min-width: 0;
     padding: var(--spacing-200);
     border: 0.125rem solid var(--border-color-input);
     border-radius: 0.5rem;
-    font-family: "Google Sans";
+    font-family: "Google Sans", sans-serif;
+    font-size: var(--font-size-p-desktop);
 }
 
 .bookingForm .inputContainer input[type="date"] {
@@ -82,45 +90,51 @@
 }
 
 .bookingForm fieldset.inputContainer {
-    border: none;
-    padding: 0;
-    margin-left: 0;
+    box-sizing: border-box;
     margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    border: none;
 }
 
 .bookingForm legend {
     display: block;
+    margin-bottom: var(--spacing-50);
+    padding-inline: 0;
+    color: var(--form-label-color);
     font-size: 1.125rem;
     font-weight: 700;
-    padding-inline: 0;
-    margin-bottom: var(--spacing-50);
-    color: var(--form-label-color);
+}
+
+/* Actions */
+
+.actions {
+    margin-top: var(--spacing-400);
 }
 
 .bookingForm .buttonContainer {
     display: flex;
-    justify-content: space-between;
-}
-
-.bookingForm .buttonContainer a,
-.bookingForm .formStep .buttonContainer button:first-of-type {
-    margin-right: var(--spacing-200);
+    flex-direction: column;
+    gap: var(--spacing-200);
 }
 
 .bookingForm .buttonContainer button,
 .bookingForm .buttonContainer a {
     display: block;
-    width: 50%;
+    width: 100%;
+    margin: 0;
     text-align: center;
 }
+
+/* Radio and checkbox groups */
 
 .selectionGroup {
     display: flex;
     flex-direction: column;
     margin-top: var(--spacing-300);
+    overflow: hidden;
     border: 0.063rem solid var(--border-color-light);
     border-radius: 0.625rem;
-    overflow: hidden;
 }
 
 .selectionOption {
@@ -143,14 +157,15 @@
 }
 
 .bookingForm .selectionLabel {
+    box-sizing: border-box;
     display: grid;
-    grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+    grid-template-columns: 1.5rem minmax(0, 1fr);
     align-items: center;
     gap: var(--spacing-200);
     width: 100%;
     min-height: 5.25rem;
-    padding: var(--spacing-200) var(--spacing-250);
     margin: 0;
+    padding: var(--spacing-200);
     cursor: pointer;
     background-color: #ffffff;
     transition:
@@ -169,9 +184,9 @@
 .selectionControl {
     position: relative;
     display: block;
+    flex-shrink: 0;
     width: 1.5rem;
     height: 1.5rem;
-    flex-shrink: 0;
     border: 0.125rem solid var(--border-color-input);
     background-color: #ffffff;
 }
@@ -192,11 +207,11 @@
 
 .selectionTitle {
     display: block;
+    margin-top: var(--spacing-75);
     color: var(--text-color-primary);
     font-size: var(--font-size-p-desktop);
     font-weight: 600;
     line-height: var(--line-height-p);
-    margin-top: var(--spacing-75);
 }
 
 .selectionHint {
@@ -210,7 +225,9 @@
 
 .selectionPrice {
     display: block;
-    margin-left: var(--spacing-200);
+    grid-column: 2;
+    margin-top: var(--spacing-50);
+    margin-left: 0;
     color: var(--text-color-primary);
     font-size: var(--font-size-p-desktop);
     font-weight: 600;
@@ -261,21 +278,23 @@
     background-color: var(--bg-blue);
 }
 
+/* Review */
+
 .reviewTable {
-    margin-top: var(--spacing-700);
+    margin-top: var(--spacing-500);
+    margin-bottom: var(--spacing-700);
+    overflow: hidden;
     border: 0.063rem solid var(--border-color-light);
     border-radius: var(--spacing-300);
-    overflow: hidden;
     background: var(--surface-secondary);
-    margin-bottom: var(--spacing-1000);
 }
 
 .reviewItem {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    gap: var(--spacing-500);
-    padding: var(--spacing-300) var(--spacing-300);
+    gap: var(--spacing-200);
+    padding: var(--spacing-200);
 }
 
 .reviewItem:not(:last-child) {
@@ -294,14 +313,15 @@
 
 .reviewContent p {
     margin: 0;
-    color: var(--text-color-secondary);
     overflow-wrap: anywhere;
+    color: var(--text-color-secondary);
 }
 
 .editLink {
     align-self: center;
     padding: var(--spacing-100);
     border: 0;
+    border-radius: 0.125rem;
     background: transparent;
     color: var(--accent-color);
     font: inherit;
@@ -316,7 +336,90 @@
 }
 
 .editLink:focus-visible {
+    border-radius: 0.125rem;
     outline: 0.188rem solid var(--accent-color);
     outline-offset: 0.188rem;
-    border-radius: 0.125rem;
+}
+
+/* Start */
+
+.bookingForm .startImage {
+    display: none;
+}
+
+/* 550px and wider */
+
+@media (min-width: 34.375rem) {
+    .bookingForm {
+        padding: var(--spacing-600);
+        border-radius: 1.5rem;
+    }
+
+    .bookingForm .buttonContainer {
+        flex-direction: row;
+    }
+
+    .bookingForm .buttonContainer button,
+    .bookingForm .buttonContainer a {
+        flex: 1 1 0;
+        width: auto;
+    }
+
+    .bookingForm .selectionLabel {
+        grid-template-columns: 1.5rem minmax(0, 1fr) auto;
+        padding: var(--spacing-200) var(--spacing-250);
+    }
+
+    .bookingForm .selectionLabelNoPrice {
+        grid-template-columns: 1.5rem minmax(0, 1fr);
+    }
+
+    .selectionPrice {
+        grid-column: auto;
+        margin-top: 0;
+        margin-left: var(--spacing-200);
+    }
+
+    .reviewItem {
+        gap: var(--spacing-500);
+        padding: var(--spacing-300);
+    }
+}
+
+/* 656px and wider */
+@media (min-width: 41rem) {
+    .bookingForm .startImage {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* 950px and wider */
+
+@media (min-width: 59.375rem) {
+    .bookingForm {
+        padding: var(--spacing-1000);
+    }
+
+    .bookingForm h1 {
+        margin-top: var(--spacing-600);
+    }
+
+    .bookingForm .intro {
+        margin-bottom: var(--spacing-1000);
+    }
+
+    .bookingForm .supportingText {
+        margin-bottom: var(--spacing-700);
+    }
+
+    .inputContainer {
+        margin-bottom: var(--spacing-1000);
+    }
+
+    .reviewTable {
+        margin-top: var(--spacing-700);
+        margin-bottom: var(--spacing-1000);
+    }
 }
