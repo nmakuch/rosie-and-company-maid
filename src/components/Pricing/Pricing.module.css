@@ -8,7 +8,7 @@
 
 .pricing h3 {
     font-size: 0.875rem;
-    color: #004CFF;
+    color: var(--accent-color);
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 0.063rem;

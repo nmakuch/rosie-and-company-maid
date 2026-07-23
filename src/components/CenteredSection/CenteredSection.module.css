@@ -1,6 +1,6 @@
 .centeredSection {
     padding: 7.75rem 0;
-    background-color: #f2f8fe;
+    background-color: var(--bg-blue);
 }
 
 .centeredSection h2,

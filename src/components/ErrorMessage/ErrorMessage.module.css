@@ -1,17 +1,17 @@
 .errorMessage {
-    background-color: #ffeded;
+    background-color: var(--bg-error-message);
     padding: var(--spacing-100) 0 var(--spacing-100) var(--spacing-200);
     font-weight: 500;
     font-size: var(--font-size-p-desktop);
     margin: 0 0 var(--spacing-150) 0;
-    border-left: 0.188rem solid #C2410C;
+    border-left: 0.188rem solid var(--text-color-error);
     border-radius: 0 0.375rem 0.375rem 0;
     display: flex;
     align-items: center;
 }
 
 .errorMessage p {
-    color: #C2410C;
+    color: var(--text-color-error);
     display: block;
     line-height: var(--line-height-p);
     margin: 0 0 0 var(--spacing-100);

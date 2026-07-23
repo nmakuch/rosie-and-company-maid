@@ -1,6 +1,6 @@
 .bookingSection {
     padding: 6.25rem 12.5rem;
-    background-color: #f2f8fe;
+    background-color: var(--bg-blue);
     text-align: left;
 }
 

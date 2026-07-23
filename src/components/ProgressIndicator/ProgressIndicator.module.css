@@ -21,6 +21,6 @@
 .progress {
     height: 100%;
     border-radius: inherit;
-    background-color: #004cff;
+    background-color: var(--accent-color);
     transition: width 300ms ease;
 }

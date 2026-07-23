@@ -60,10 +60,10 @@
 
 .backToTop {
     padding: var(--spacing-200);
-    border: 0.125rem solid #131313;
+    border: 0.125rem solid var(--text-color-primary);
     background-color: transparent;
     border-radius: 0.375rem;
-    color: #131313;
+    color: var(--text-color-primary);
     font-size: var(--font-size-footer);
 }
 
@@ -87,7 +87,7 @@
 
 .footerLinkColumn ul li {
     margin-bottom: var(--spacing-200);
-    color: #666;
+    color: var(--text-color-hint);
     font-size: var(--font-size-footer);
     font-weight: 400;
 }
@@ -159,7 +159,7 @@
     }
 
     .backToTop:hover {
-        background: #131313;
+        background: var(--text-color-primary);
         color: #fff;
     }
 

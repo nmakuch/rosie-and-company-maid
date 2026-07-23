@@ -4,6 +4,18 @@
     ------------------------ */
     --text-color-primary: #1c1c1c;
     --text-color-light: #ffffff;
+    --text-color-error: #C2410C;
+    --accent-color: #004CFF;
+    --button-color-primary: #004CFF;
+    --button-text-color-secondary: #004CFF;
+    --button-border-color-secondary: #004CFF;
+    --button-border-color: #004CFF;
+    --form-label-color: #363636;
+    --border-color-light: #d9dee8;
+    --border-color-input: #a3a3a3;
+    --text-color-hint: #838282;
+    --bg-blue: #f2f8fe;
+    --bg-error-message: #ffeded;
 
     /* ----------------------
     Desktop font sizing

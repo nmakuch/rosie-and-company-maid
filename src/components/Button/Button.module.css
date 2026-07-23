@@ -3,8 +3,8 @@
     font-size: var(--font-size-p-desktop);
     border-radius: var(--spacing-200);
     border: none;
-    background-color: #004CFF;
-    border: 0.188rem solid #004CFF;
+    background-color: var(--button-color-primary);
+    border: 0.188rem solid var(--button-border-color);
     color: var(--text-color-light);
     font-family: "Inter";
     font-weight: 400;
@@ -14,21 +14,12 @@
     cursor: pointer;
 }
 
-a.primary,
-a.secondary {
-    text-decoration: none;
-}
-
-a:visited.primary {
-    color: var(--text-color-light);
-}
-
 .secondary {
     padding: var(--spacing-250) var(--spacing-400);
     font-size: var(--font-size-p-desktop);
     border-radius: var(--spacing-200);
-    border: 0.188rem solid #004CFF;
-    color: #004CFF;
+    border: 0.188rem solid var(--button-border-color);
+    color: var(--button-text-color-secondary);
     font-family: "Inter";
     font-weight: 600;
     letter-spacing: 0.063rem;
@@ -39,6 +30,19 @@ a:visited.primary {
     cursor: pointer;
 }
 
+a.primary,
+a.secondary {
+    text-decoration: none;
+    transition:
+        background-color 150ms ease,
+        border-color 150ms ease,
+        color 150ms ease;
+}
+
+a:visited.primary {
+    color: var(--text-color-light);
+}
+
 a:visited.secondary {
-    color: #004CFF;
+    color: var(--button-text-color-secondary);
 }
