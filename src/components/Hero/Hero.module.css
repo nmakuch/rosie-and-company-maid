@@ -5,8 +5,15 @@
 
 .buttonContainer {
     display: flex;
+    flex-direction: column;
+    text-align: center;
     gap: var(--spacing-200);
     margin-top: var(--spacing-400);
+}
+
+.buttonContainer button {
+    display: block;
+    margin-right: 0;
 }
 
 /* min-width: 550px */
@@ -14,10 +21,15 @@
     .mobileHero {
         width: 90%;
     }
+
+    .buttonContainer {
+        display: flex;
+        flex-direction: row;
+    }
 }
 
-/* min-width: 900px */
-@media (min-width: 56.25rem) {
+/* Desktop: 950px and wider */
+@media (min-width: 59.375rem) {
     .hero {
         --image-offset: clamp(35rem,
                 calc(61.25rem - 45vw),

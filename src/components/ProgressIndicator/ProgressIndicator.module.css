@@ -1,6 +1,6 @@
 .progressIndicator {
     width: 100%;
-    margin-bottom: var(--spacing-1200);
+    margin-bottom: var(--spacing-500);
 }
 
 .stepText {
@@ -23,4 +23,18 @@
     border-radius: inherit;
     background-color: var(--accent-color);
     transition: width 300ms ease;
+}
+
+/* 550px and wider */
+@media (min-width: 34.375rem) {
+    .progressIndicator {
+        margin-bottom: var(--spacing-700);
+    }
+}
+
+/* 950px and wider */
+@media (min-width: 59.375rem) {
+    .progressIndicator {
+        margin-bottom: var(--spacing-1200);
+    }
 }

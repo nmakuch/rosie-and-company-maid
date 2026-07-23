@@ -7,6 +7,7 @@
     font-weight: 700;
     letter-spacing: 0.125rem;
     font-family: "Google Sans", sans-serif;
+    text-wrap: balance;
 }
 
 .left {
@@ -21,8 +22,8 @@
     text-align: right;
 }
 
-/* min-width: 550px */
-@media (min-width: 34.375rem) {
+/* 706px and wider */
+@media (min-width: 44.125rem) {
     .subheading {
         font-size: var(--font-size-p-desktop);
     }

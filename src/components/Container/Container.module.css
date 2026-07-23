@@ -3,14 +3,14 @@
     max-width: 92.5rem;
     /* 1480px */
     margin: 0 auto;
-    padding-inline: var(--spacing-400);
+    padding-inline: var(--spacing-600);
     box-sizing: border-box;
 }
 
-/* min-width: 757px */
-@media (min-width: 47.313rem) {
+/* Desktop: 950px and wider */
+@media (min-width: 59.375rem) {
     .container {
-        padding-inline: var(--spacing-800);
+        padding-inline: var(--spacing-1000);
     }
 }
 

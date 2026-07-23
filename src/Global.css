@@ -11,8 +11,8 @@ body {
 }
 
 p {
-    font-size: var(--font-size-p-mobile);
     color: var(--text-color-primary);
+    font-size: var(--font-size-p-mobile);
     line-height: var(--line-height-p);
     letter-spacing: 0.009rem;
 }
@@ -23,25 +23,28 @@ h3,
 h4,
 h5,
 h6 {
-    text-wrap: balance;
+    font-family: "Google Sans", sans-serif;
     font-weight: 600;
     letter-spacing: -0.016rem;
-    font-family: "Google Sans", sans-serif;
+    text-wrap: balance;
 }
 
 h1 {
-    font-size: var(--font-size-h1-mobile);
-    margin: 0 0 var(--spacing-300) 0;
+    max-width: 100%;
+    margin: 0 0 var(--spacing-300);
+    font-size: 2.25rem;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
 }
 
 h2 {
+    margin: 0 0 var(--spacing-300);
     font-size: var(--font-size-h2-mobile);
-    margin: 0 0 var(--spacing-300) 0;
 }
 
 h3 {
+    margin: 0 0 var(--spacing-300);
     font-size: var(--font-size-h3-mobile);
-    margin: 0 0 var(--spacing-300) 0;
 }
 
 main {
@@ -61,28 +64,25 @@ main {
     clip-path: inset(50%);
 }
 
-/* min-width: 550px */
-@media (min-width: 34.375rem) {
-
+/* 950px and wider */
+@media (min-width: 59.375rem) {
     p {
         font-size: var(--font-size-p-desktop);
-        color: var(--text-color-primary);
-        line-height: var(--line-height-p);
-        letter-spacing: 0.009rem;
     }
 
     h1 {
+        margin-bottom: var(--spacing-400);
         font-size: var(--font-size-h1-desktop);
-        margin: 0 0 var(--spacing-400) 0;
+        text-wrap: balance;
     }
 
     h2 {
+        margin-bottom: var(--spacing-400);
         font-size: var(--font-size-h2-desktop);
-        margin: 0 0 var(--spacing-400) 0;
     }
 
     h3 {
+        margin-bottom: var(--spacing-400);
         font-size: var(--font-size-h3-desktop);
-        margin: 0 0 var(--spacing-400) 0;
     }
 }

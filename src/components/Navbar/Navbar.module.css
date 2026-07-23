@@ -177,7 +177,7 @@
 }
 
 .mobileNav li {
-    margin: 0;
+    margin: 0 var(--spacing-150) 0 0;
 }
 
 .mobileNav a,
@@ -207,8 +207,8 @@
 }
 
 /* Desktop */
-/* min-width: 900px */
-@media (min-width: 56.25rem) {
+/* Desktop: 950px and wider */
+@media (min-width: 59.375rem) {
     .logoLink img {
         width: 14.063rem;
     }

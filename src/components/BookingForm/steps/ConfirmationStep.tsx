@@ -12,10 +12,6 @@ export default function ConfirmationStep({
 }: ConfirmationStepProps) {
     return (
         <div className={styles.formStep}>
-            <div className={styles.confirmationIcon} aria-hidden="true">
-                ✓
-            </div>
-
             <h2>Your booking request has been received</h2>
 
             <p className={styles.supportingText}>

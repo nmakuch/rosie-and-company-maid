@@ -13,7 +13,7 @@
 }
 
 .textContent {
-    width: 40rem;
+    width: 100%;
     max-width: 100%;
     padding: var(--spacing-1000) 0;
 }
@@ -27,23 +27,12 @@
 
 .introP {
     margin: 0;
-    text-wrap: balance;
-}
-
-.splitSection .buttonContainer {
-    display: flex;
-    gap: var(--spacing-200);
-}
-
-.splitSection button {
-    display: block;
-    margin-right: var(--spacing-200);
 }
 
 /* Tablet and small desktop */
 
-/* min-width: 900px */
-@media (min-width: 56.25rem) {
+/* Desktop: 950px and wider */
+@media (min-width: 59.375rem) {
     .splitSection {
         align-items: center;
         min-height: 42.5rem;

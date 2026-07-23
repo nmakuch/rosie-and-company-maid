@@ -7,18 +7,19 @@
     display: flex;
     width: 100%;
     height: auto;
-    margin-top: var(--spacing-600);
+    margin-top: var(--spacing-400);
 }
 
 /* min-width: 550px */
 @media (min-width: 34.375rem) {
     .mobileBookAnywhere {
-        width: 90%;
+        width: 100%;
+        margin-top: var(--spacing-600);
     }
 }
 
-/* min-width: 900px */
-@media (min-width: 56.25rem) {
+/* Desktop: 950px and wider */
+@media (min-width: 59.375rem) {
     .mobileBookAnywhere {
         display: none;
     }

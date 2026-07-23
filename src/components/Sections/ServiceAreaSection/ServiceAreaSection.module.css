@@ -21,8 +21,8 @@
     }
 }
 
-/* min-width: 900px */
-@media (min-width: 56.25rem) {
+/* Desktop: 950px and wider */
+@media (min-width: 59.375rem) {
     .mobileMap {
         display: none;
     }
