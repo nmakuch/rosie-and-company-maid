@@ -32,7 +32,8 @@
     margin: 0;
     padding: var(--spacing-500) 0;
     border-bottom: 0.125rem solid #dddddd;
-    text-align: left;
+    text-align: center;
+    text-wrap: balance;
 }
 
 .pricing button,

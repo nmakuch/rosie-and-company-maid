@@ -202,7 +202,7 @@
         grid-template-columns:
             minmax(16.25rem, 1.6fr) repeat(3, minmax(7.5rem, 1fr));
         gap: clamp(2rem, 5vw, 5rem);
-        padding: var(--spacing-800);
+        padding: var(--spacing-800) 0;
     }
 
     .footerBrand {

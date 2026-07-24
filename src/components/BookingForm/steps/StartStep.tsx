@@ -13,7 +13,7 @@ export default function StartStep({
                 alt=""
             />
 
-            <h1>Let's get you booked</h1>
+            <h1>Let's book your appointment</h1>
 
             <p className={styles.intro}>
                 Tell us a little about your home and the cleaning service

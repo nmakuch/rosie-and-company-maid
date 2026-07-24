@@ -1,0 +1,161 @@
+.faqSection {
+    padding: 5rem 0;
+    background-color: #ffffff;
+}
+
+.faqContent {
+    width: 100%;
+    max-width: 92.5rem;
+    margin-inline: auto;
+    box-sizing: border-box;
+}
+
+.faqContent h1 {
+    margin: 0 0 var(--spacing-1000);
+    text-align: center;
+    text-wrap: balance;
+}
+
+.faqList {
+    display: grid;
+    gap: var(--spacing-300);
+}
+
+.faqItem {
+    overflow: hidden;
+    border: 0.0625rem solid #cbdcf5;
+    border-radius: 0.75rem;
+    background-color: #ffffff;
+}
+
+.faqQuestion {
+    display: flex;
+    gap: var(--spacing-400);
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-500);
+    border-bottom: 0.0625rem solid transparent;
+    color: var(--text-color-primary);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    list-style: none;
+    cursor: pointer;
+    transition:
+        border-color 200ms ease,
+        background-color 200ms ease;
+}
+
+.faqQuestion:hover {
+    background-color: #f2f8fe;
+}
+
+.faqQuestion:focus-visible {
+    outline: 0.1875rem solid var(--accent-color);
+    outline-offset: -0.1875rem;
+}
+
+/* Removes the browser's default disclosure arrow */
+.faqQuestion::-webkit-details-marker {
+    display: none;
+}
+
+/* Displays the divider only when the FAQ is open */
+.faqItem[open] .faqQuestion {
+    border-bottom-color: #cbdcf5;
+}
+
+/* Custom plus and minus icon */
+
+.icon {
+    position: relative;
+    flex: 0 0 1.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.icon::before,
+.icon::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.875rem;
+    height: 0.125rem;
+    border-radius: 0.125rem;
+    background-color: var(--accent-color);
+    content: "";
+    transform: translate(-50%, -50%);
+    transition:
+        opacity 200ms ease,
+        transform 200ms ease;
+}
+
+.icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+/* Removes the vertical line to turn the plus into a minus */
+.faqItem[open] .icon::after {
+    opacity: 0;
+    transform:
+        translate(-50%, -50%) rotate(90deg) scaleX(0);
+}
+
+/* Answer */
+
+.faqAnswer {
+    padding: var(--spacing-500);
+}
+
+.faqAnswer p {
+    max-width: 44rem;
+    margin: 0;
+    color: var(--text-color-secondary);
+    line-height: 1.7;
+}
+
+/* Opening animation */
+
+.faqItem[open] .faqAnswer {
+    animation: openAnswer 250ms ease-out;
+}
+
+@keyframes openAnswer {
+    from {
+        opacity: 0;
+        transform: translateY(-0.5rem);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 550px and wider */
+
+@media (min-width: 34.375rem) {
+    .faqSection {
+        padding: 6rem 0;
+    }
+
+    .faqQuestion,
+    .faqAnswer {
+        padding: var(--spacing-600);
+    }
+}
+
+/* Disable motion when requested by the user */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .faqQuestion,
+    .icon::before,
+    .icon::after {
+        transition: none;
+    }
+
+    .faqItem[open] .faqAnswer {
+        animation: none;
+    }
+}
