@@ -20,7 +20,7 @@
     background-color: var(--button-color-primary);
     border: 0.188rem solid var(--button-border-color-primary);
     color: var(--text-color-light);
-    font-family: "Inter";
+    font-family: "Google Sans";
     font-weight: 400;
     letter-spacing: 0.063rem;
     box-sizing: border-box;
@@ -44,10 +44,10 @@
     border-radius: var(--spacing-200);
     border: 0.188rem solid var(--button-border-color-secondary);
     color: var(--button-text-color-secondary);
-    font-family: "Inter";
+    font-family: "Google Sans";
     font-weight: 600;
     letter-spacing: 0.063rem;
-    font-family: "Inter";
+    font-family: "Google Sans";
     box-sizing: border-box;
     display: inline-block;
     background-color: transparent;
