@@ -17,7 +17,7 @@ export default function ServiceAreaSection() {
 
             <img
                 className={styles.mobileMap}
-                src="/images/service_area/service-area.png"
+                src="/images/service_area/service-area.webp"
                 alt=""
                 loading="lazy"
             />

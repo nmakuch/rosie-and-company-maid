@@ -13,7 +13,7 @@ export default function BookAnywhereSection() {
         >
             <img
                 className={styles.mobileBookAnywhere}
-                src="/images/book_anywhere/book-anywhere-mobile.png"
+                src="/images/book_anywhere/book-anywhere-mobile.webp"
                 alt=""
                 loading="lazy"
             />

@@ -9,7 +9,7 @@ export default function StartStep({
         <div className={styles.startPage}>
             <img
                 className={styles.startImage}
-                src="/images/booking_form/booking-form-start.png"
+                src="/images/booking_form/booking-form-start.webp"
                 alt=""
             />
 
