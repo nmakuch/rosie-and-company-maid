@@ -1,8 +1,11 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="fonts-loading">
 
 <head>
   <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.png" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
   <link
-    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700"
+    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=optional"
     rel="stylesheet" />
 
   <style>
@@ -27,13 +30,18 @@
 
     #root {
       min-height: 100svh;
-      opacity: 1;
-      transition: opacity 240ms ease;
+      opacity: 0;
+
+      transition:
+        opacity 500ms ease;
     }
 
     html.fonts-loading #root {
-      opacity: 0;
       pointer-events: none;
+    }
+
+    html.fonts-ready #root {
+      opacity: 1;
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -43,12 +51,12 @@
     }
   </style>
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>rosie-and-company-ms</title>
+  <title>Rosie & Company</title>
 </head>
 
 <body>
   <div id="root"></div>
+
   <script type="module" src="/src/main.tsx"></script>
 </body>
 

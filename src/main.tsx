@@ -18,9 +18,10 @@ createRoot(rootElement).render(
   </StrictMode>,
 );
 
-const fontLoadingTimeout = new Promise<void>((resolve) => {
-  window.setTimeout(resolve, 1500);
-});
+const fontLoadingTimeout =
+  new Promise<void>((resolve) => {
+    window.setTimeout(resolve, 1500);
+  });
 
 const requiredFonts = document.fonts
   ? Promise.all([
@@ -30,20 +31,28 @@ const requiredFonts = document.fonts
     document.fonts.load(
       '600 1rem "Google Sans"'
     ),
-  ]).catch(() => undefined)
+  ])
+    .then(() => undefined)
+    .catch(() => undefined)
   : Promise.resolve();
+
+function revealApp() {
+  document.documentElement.classList.remove(
+    "fonts-loading"
+  );
+
+  document.documentElement.classList.add(
+    "fonts-ready"
+  );
+}
 
 void Promise.race([
   requiredFonts,
   fontLoadingTimeout,
 ]).then(() => {
   window.requestAnimationFrame(() => {
-    document.documentElement.classList.remove(
-      "fonts-loading"
-    );
-
-    document.documentElement.classList.add(
-      "fonts-ready"
+    window.requestAnimationFrame(
+      revealApp
     );
   });
 });
