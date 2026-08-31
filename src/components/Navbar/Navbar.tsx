@@ -47,6 +47,8 @@ export default function Navbar() {
                             className={styles.brandLogo}
                             src="/images/logo/rosie-logo.svg"
                             alt=""
+                            width="69"
+                            height="63"
                             aria-hidden="true"
                         />
 

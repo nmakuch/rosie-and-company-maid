@@ -13,11 +13,23 @@ export default function Footer() {
                     <div className={styles.ctaContainer}>
                         <div className={styles.ctaContent}>
                             <div className={styles.footerBrand}>
-                                <Link to="/">
+                                <Link className={styles.brand} to="/">
                                     <img
-                                        src="/images/logo/RosieLogo-WhiteOutline.png"
-                                        alt="Rosie & Company"
+                                        className={styles.brandLogo}
+                                        src="/images/logo/rosie-logo.svg"
+                                        alt=""
+                                        width="69"
+                                        height="63"
+                                        aria-hidden="true"
                                     />
+
+                                    <span className={styles.brandText}>
+                                        <span className={styles.brandName}>
+                                            Rosie & Company
+                                        </span>
+
+                                        <small>Cleaning service</small>
+                                    </span>
                                 </Link>
 
                                 <p>

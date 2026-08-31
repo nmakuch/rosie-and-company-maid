@@ -13,6 +13,44 @@
     display: none;
 }
 
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--text-color-primary);
+    text-decoration: none;
+}
+
+.brandLogo {
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 3rem;
+    object-fit: contain;
+}
+
+.brandText {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.brandName {
+    font-family: inherit;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1;
+}
+
+.brandText small {
+    margin-top: 0.4rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
 
 .ctaContainer {
     display: grid;
@@ -20,11 +58,6 @@
     gap: 3rem;
     width: 100%;
     order: 1;
-}
-
-.ctaContainer img {
-    display: block;
-    width: 11.875rem;
 }
 
 .ctaContainer .socialMedia {
@@ -171,10 +204,6 @@
 
     .backToTop:hover {
         background: var(--button-color-secondary-hover);
-    }
-
-    .ctaContainer img {
-        width: 14.063rem;
     }
 
     .ctaContainer p {

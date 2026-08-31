@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Google Sans";
-    src: url("/fonts/google-sans-variable.woff2") format("woff2-variations");
+    src: url("/fonts/google-sans-flex.woff2") format("woff2");
     font-style: normal;
     font-weight: 400 700;
     font-display: block;
@@ -12,17 +12,24 @@
     box-sizing: border-box;
 }
 
-button,
-input,
-textarea,
-select {
-    font: inherit;
+html {
+    font-family: "Google Sans", sans-serif;
 }
 
 body {
     padding: 0;
     margin: 0;
+    color: var(--text-color-primary);
     font-family: "Google Sans", sans-serif;
+    background: #ffffff;
+}
+
+button,
+input,
+textarea,
+select {
+    color: inherit;
+    font: inherit;
 }
 
 p {
@@ -38,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: "Google Sans", sans-serif;
+    font-family: inherit;
     font-weight: 600;
     letter-spacing: -0.016rem;
     text-wrap: balance;
@@ -88,7 +95,6 @@ main {
     h1 {
         margin-bottom: var(--spacing-400);
         font-size: var(--font-size-h1-desktop);
-        text-wrap: balance;
     }
 
     h2 {
