@@ -10,7 +10,9 @@ export default function StartStep({
             <img
                 className={styles.startImage}
                 src="/images/booking_form/booking-form-start.webp"
-                alt=""
+                width="640"
+                height="400"
+                alt="an image of clean room"
             />
 
             <h1>Let's book your appointment</h1>

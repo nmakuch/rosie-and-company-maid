@@ -14,14 +14,45 @@
     justify-content: space-between;
 }
 
-.logoLink {
-    display: block;
+/* Brand */
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--color-primary);
+    text-decoration: none;
 }
 
-.logoLink img {
+.brandLogo {
     display: block;
-    width: 11.875rem;
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 auto;
+    object-fit: contain;
 }
+
+.brandText {
+    display: flex;
+    flex-direction: column;
+}
+
+.brandName {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    line-height: 1;
+}
+
+.brandText small {
+    margin-top: 0.4rem;
+    font-size: 0.65rem;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+
 
 /* Desktop navigation */
 
@@ -209,10 +240,6 @@
 /* Desktop */
 /* Desktop: 950px and wider */
 @media (min-width: 59.375rem) {
-    .logoLink img {
-        width: 14.063rem;
-    }
-
     .desktopNav {
         display: flex;
     }

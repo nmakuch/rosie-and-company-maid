@@ -42,11 +42,21 @@ export default function Navbar() {
         <nav className={styles.navbar}>
             <Container>
                 <div className={styles.navContent}>
-                    <Link to="/" className={styles.logoLink}>
+                    <Link className={styles.brand} to="/" onClick={closeMenu}>
                         <img
-                            src="/images/logo/RosieLogo-WhiteOutline.png"
-                            alt="Rosie & Company"
+                            className={styles.brandLogo}
+                            src="/images/logo/rosie-logo.svg"
+                            alt=""
+                            aria-hidden="true"
                         />
+
+                        <span className={styles.brandText}>
+                            <span className={styles.brandName}>
+                                Rosie & Company
+                            </span>
+
+                            <small>Cleaning service</small>
+                        </span>
                     </Link>
 
                     <ul className={styles.desktopNav}>
