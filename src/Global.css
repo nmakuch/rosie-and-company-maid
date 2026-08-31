@@ -1,7 +1,22 @@
+@font-face {
+    font-family: "Google Sans";
+    src: url("/fonts/google-sans-variable.woff2") format("woff2-variations");
+    font-style: normal;
+    font-weight: 400 700;
+    font-display: block;
+}
+
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
 }
 
 body {
