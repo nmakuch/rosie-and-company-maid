@@ -1,20 +1,13 @@
 <!doctype html>
-<html lang="en" class="fonts-loading">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="icon" type="image/svg+xml" href="/images/logo/favicon.png" />
+  <link rel="icon" type="image/png" href="/images/logo/favicon.png" />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=optional"
-    rel="stylesheet" />
+  <link rel="preload" href="/fonts/GoogleSans-Variable.woff2" as="font" type="font/woff2" crossorigin />
 
   <style>
     html,
@@ -30,24 +23,6 @@
 
     #root {
       min-height: 100svh;
-      opacity: 0;
-
-      transition:
-        opacity 500ms ease;
-    }
-
-    html.fonts-loading #root {
-      pointer-events: none;
-    }
-
-    html.fonts-ready #root {
-      opacity: 1;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      #root {
-        transition: none;
-      }
     }
   </style>
 
@@ -56,7 +31,6 @@
 
 <body>
   <div id="root"></div>
-
   <script type="module" src="/src/main.tsx"></script>
 </body>
 
