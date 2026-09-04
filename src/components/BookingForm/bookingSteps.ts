@@ -12,4 +12,17 @@ export const BOOKING_STEPS = {
     CONFIRMATION: 10,
 } as const;
 
-export const TOTAL_BOOKING_STEPS = 10;
+export const BOOKING_STEP_LABELS: Record<number, string> = {
+    [BOOKING_STEPS.START]: "Start",
+    [BOOKING_STEPS.NAME]: "Your name",
+    [BOOKING_STEPS.EMAIL]: "Contact information",
+    [BOOKING_STEPS.ADDRESS]: "Service address",
+    [BOOKING_STEPS.DATE]: "Preferred date",
+    [BOOKING_STEPS.TIME]: "Preferred time",
+    [BOOKING_STEPS.CLEANING_TYPE]: "Cleaning plan",
+    [BOOKING_STEPS.CLEANING_OPTION]: "Cleaning option",
+    [BOOKING_STEPS.ADD_ONS]: "Optional add-ons",
+    [BOOKING_STEPS.REVIEW]: "Review and submit",
+};
+
+export const TOTAL_BOOKING_STEPS = BOOKING_STEPS.REVIEW;

@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import styles from "./BookingForm.module.css";
-
 import ProgressIndicator from "../ProgressIndicator/ProgressIndicator";
+import PricePreview from "../PricePreview/PricePreview";
+import styles from "./BookingForm.module.css";
 
 import {
     StartStep,
@@ -26,16 +26,12 @@ import {
 } from "./bookingSchema";
 
 import { bookingStepFields } from "./bookingStepFields";
-
-import {
-    hourlyOptions,
-    packageOptions,
-} from "./bookingOptions";
-
+import { hourlyOptions, packageOptions } from "./bookingOptions";
 import { calculateBookingPrice } from "./calculateBookingPrice";
 
 import {
     BOOKING_STEPS,
+    BOOKING_STEP_LABELS,
     TOTAL_BOOKING_STEPS,
 } from "./bookingSteps";
 
@@ -43,9 +39,7 @@ export default function BookingForm() {
     const [step, setStep] = useState<number>(BOOKING_STEPS.START);
     const [editingStep, setEditingStep] = useState<number | null>(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
-
-    const [submitError, setSubmitError] =
-        useState<string | null>(null);
+    const [submitError, setSubmitError] = useState<string | null>(null);
 
     const {
         register,
@@ -90,6 +84,10 @@ export default function BookingForm() {
         cleaningOption: selectedCleaningOption,
         addOns: selectedAddOns,
     });
+
+    const showBookingLayout =
+        step >= BOOKING_STEPS.START &&
+        step <= BOOKING_STEPS.REVIEW;
 
     useEffect(() => {
         window.scrollTo({
@@ -205,126 +203,155 @@ export default function BookingForm() {
             className={styles.bookingForm}
             onSubmit={handleSubmit(onSubmit)}
         >
-            <div className={styles.formContainer}>
-                {step === BOOKING_STEPS.START && (
-                    <StartStep onStart={startForm} />
-                )}
+            {showBookingLayout ? (
+                <div className={styles.bookingLayout}>
+                    <aside
+                        className={styles.bookingSidebar}
+                        aria-label="Booking progress and price"
+                    >
+                        <div className={styles.sidebarInner}>
+                            <div className={styles.stepSummary}>
+                                <p className={styles.sidebarLabel}>
+                                    Current step
+                                </p>
 
-                {step > BOOKING_STEPS.START &&
-                    step <= BOOKING_STEPS.REVIEW && (
-                        <ProgressIndicator
-                            currentStep={step}
-                            totalSteps={TOTAL_BOOKING_STEPS}
+                                <h2 className={styles.sidebarTitle}>
+                                    {BOOKING_STEP_LABELS[step]}
+                                </h2>
+
+                                <ProgressIndicator
+                                    currentStep={step}
+                                    totalSteps={TOTAL_BOOKING_STEPS}
+                                />
+                            </div>
+
+                            <PricePreview
+                                cleaning={cleaning}
+                                addOns={pricedAddOns}
+                                subtotal={subtotal}
+                                tax={tax}
+                                totalPrice={totalPrice}
+                            />
+                        </div>
+                    </aside>
+
+                    <div className={styles.formPanel}>
+
+                        {step === BOOKING_STEPS.START && (
+                            <StartStep onStart={startForm} />
+                        )}
+
+                        {step === BOOKING_STEPS.NAME && (
+                            <NameStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.EMAIL && (
+                            <EmailStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.ADDRESS && (
+                            <AddressStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.DATE && (
+                            <DateStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.TIME && (
+                            <TimeStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.CLEANING_TYPE && (
+                            <CleaningTypeStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                                setValue={setValue}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.CLEANING_OPTION && (
+                            <CleaningOptionStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                                cleaningType={cleaningType}
+                                options={cleaningOptions}
+                                cleaning={cleaning}
+                                addOns={pricedAddOns}
+                                subtotal={subtotal}
+                                tax={tax}
+                                totalPrice={totalPrice}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.ADD_ONS && (
+                            <AddOnsStep
+                                register={register}
+                                errors={errors}
+                                onBack={backStep}
+                                onNext={nextStep}
+                                cleaning={cleaning}
+                                addOns={pricedAddOns}
+                                subtotal={subtotal}
+                                tax={tax}
+                                totalPrice={totalPrice}
+                            />
+                        )}
+
+                        {step === BOOKING_STEPS.REVIEW && (
+                            <ReviewStep
+                                booking={booking}
+                                onBack={backStep}
+                                editStep={editStep}
+                                cleaning={cleaning}
+                                addOns={pricedAddOns}
+                                subtotal={subtotal}
+                                tax={tax}
+                                totalPrice={totalPrice}
+                                isSubmitting={isSubmitting}
+                                submitError={submitError}
+                            />
+                        )}
+                    </div>
+                </div>
+            ) : (
+                <div className={styles.standalonePanel}>
+                    {step === BOOKING_STEPS.CONFIRMATION && (
+                        <ConfirmationStep
+                            onStartOver={startOver}
+                            email={booking.email}
                         />
                     )}
-
-                {step === BOOKING_STEPS.NAME && (
-                    <NameStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.EMAIL && (
-                    <EmailStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.ADDRESS && (
-                    <AddressStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.DATE && (
-                    <DateStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.TIME && (
-                    <TimeStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.CLEANING_TYPE && (
-                    <CleaningTypeStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                        setValue={setValue}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.CLEANING_OPTION && (
-                    <CleaningOptionStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                        cleaningType={cleaningType}
-                        options={cleaningOptions}
-                        cleaning={cleaning}
-                        addOns={pricedAddOns}
-                        subtotal={subtotal}
-                        tax={tax}
-                        totalPrice={totalPrice}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.ADD_ONS && (
-                    <AddOnsStep
-                        register={register}
-                        errors={errors}
-                        onBack={backStep}
-                        onNext={nextStep}
-                        cleaning={cleaning}
-                        addOns={pricedAddOns}
-                        subtotal={subtotal}
-                        tax={tax}
-                        totalPrice={totalPrice}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.REVIEW && (
-                    <ReviewStep
-                        booking={booking}
-                        onBack={backStep}
-                        editStep={editStep}
-                        cleaning={cleaning}
-                        addOns={pricedAddOns}
-                        subtotal={subtotal}
-                        tax={tax}
-                        totalPrice={totalPrice}
-                        isSubmitting={isSubmitting}
-                        submitError={submitError}
-                    />
-                )}
-
-                {step === BOOKING_STEPS.CONFIRMATION && (
-                    <ConfirmationStep
-                        onStartOver={startOver}
-                        email={booking.email}
-                    />
-                )}
-            </div>
+                </div>
+            )}
         </form>
     );
 }

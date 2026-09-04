@@ -1,52 +1,93 @@
 .hero {
-    --image-space-mobile: var(--spacing-1000);
-    background-image: none;
+    position: relative;
+    overflow: hidden;
+    padding: clamp(3rem, 7vw, 7.5rem) 0 clamp(5rem, 10vw, 9rem);
+    background: var(--surface-page);
 }
 
-.buttonContainer {
+.layout {
+    display: grid;
+    align-items: center;
+    gap: clamp(3rem, 7vw, 7rem);
+}
+
+.content {
+    max-width: 38rem;
+}
+
+.content h1 {
+    max-width: 16ch;
+}
+
+.intro {
+    max-width: 35rem;
+    margin: 0;
+    color: var(--text-color-secondary);
+    text-wrap: pretty;
+}
+
+.actions {
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: var(--spacing-200);
-    margin-top: var(--spacing-400);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
 }
 
-.buttonContainer button {
+.trustList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.625rem;
+    margin: 2.75rem 0 0;
+    padding: 0;
+    list-style: none;
+}
+
+.trustList li {
+    padding: 0.625rem 0.875rem;
+    color: var(--brand-color-dark);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1;
+    background: var(--surface-highlight);
+    border: 0.063rem solid rgb(119 128 102 / 20%);
+    border-radius: 999rem;
+}
+
+.imageFrame {
+    min-height: 24rem;
+    overflow: hidden;
+    background: var(--surface-page);
+    border-radius: clamp(1rem, 2vw, 2rem);
+}
+
+.imageFrame img {
     display: block;
-    margin-right: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    object-position: 58% center;
 }
 
-/* min-width: 550px */
-@media (min-width: 34.375rem) {
-    .mobileHero {
-        width: 90%;
-    }
-
-    .buttonContainer {
-        display: flex;
-        flex-direction: row;
+@media (max-width: 31rem) {
+    .actions a {
+        width: 100%;
     }
 }
 
-/* Desktop: 950px and wider */
 @media (min-width: 59.375rem) {
-    .hero {
-        --image-offset: clamp(35rem,
-                calc(61.25rem - 45vw),
-                48.75rem);
-        --image-size: 80%;
-
-        background-image:
-            url("/images/hero/hero.webp");
+    .layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(24rem, 0.8fr);
+        gap: clamp(3rem, 6vw, 6rem);
     }
-}
 
-/* min-width: 1200px */
-@media (min-width: 75rem) {
-    .hero {
-        --image-offset: clamp(27.5rem,
-                calc(63.75rem - 45vw),
-                51.25rem);
-        --image-size: 90%;
+    .content {
+        max-width: 44rem;
+    }
+
+    .imageFrame,
+    .imageFrame img {
+        min-height: 38rem;
+        aspect-ratio: 4 / 5;
     }
 }

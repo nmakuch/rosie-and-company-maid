@@ -1,23 +1,7 @@
 .container {
-    width: 100%;
-    max-width: 92.5rem;
-    /* 1480px */
-    margin: 0 auto;
-    padding-inline: var(--spacing-600);
     box-sizing: border-box;
+    width: 100%;
+    max-width: 88rem;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 5vw, 5rem);
 }
-
-/* Desktop: 950px and wider */
-@media (min-width: 59.375rem) {
-    .container {
-        padding-inline: var(--spacing-1000);
-    }
-}
-
-/* min-width: 1200px */
-@media (min-width: 75rem) {
-    .container {
-        padding-inline: var(--spacing-1600);
-    }
-}
-

@@ -7,37 +7,37 @@ const faqItems = [
     {
         question: "Who will clean my home?",
         answer:
-            "For your first visit, we will send one of our professional maids to your home. We strongly recommend that you are present during this visit, as it will give you the opportunity to provide your own detailed instructions and expectations. If you are satisfied with the service, we will assign this maid to your home for all future visits.",
+            "For your first visit, we will send one of our professional cleaners to your home. We recommend being present so you can share any specific instructions or expectations. If you are happy with the service, we will make every effort to assign the same cleaner to future visits.",
     },
     {
-        question: "What are the qualifications of the cleaning staff?",
+        question: "What are the qualifications of your cleaning staff?",
         answer:
-            "We only hire experienced personnel who have years of experience in the industry. In addition to their experience level, they must all pass a criminal record check, a rigorous interview process, and a training program that involves passing a final examination.",
+            "We hire experienced cleaning professionals who must pass a criminal record check, a detailed interview process, and a training program that includes a final assessment.",
     },
     {
-        question: " What will the maid service clean within my home?",
+        question: "What will be cleaned within my home?",
         answer:
-            "While we do offer pre-structured plans that cover the usual items, our prices are on an hourly rate basis. This means that you can ask our staff to spend the time exactly how you want, on anything you want, within reason. Our staff retains the right to refuse work they deem unsafe. You must also provide all the necessary tools and equipment required to perform these tasks.",
+            "Our cleaning packages cover the most commonly requested areas, but the service can be adjusted around your priorities. Our staff may refuse work they consider unsafe or outside the reasonable scope of a residential cleaning service.",
     },
     {
-        question: "Do I need to provide the cleaning supplies?",
+        question: "Do I need to provide cleaning supplies?",
         answer:
-            "Yes. There are a couple of major reasons for this. Firstly, this allows your home to be cleaned with the products of your choice that are best suited for your home. Secondly, part of what allows us to offer the best rates in the area is the fact that our staff operates independently and does not always have access to crew vehicles where supplies and equipment can be carried. Many of them use public transit to get around. Some of our staff may bring their own products, but they will only use them with your authorization. For a list of the required items to have on hand, click here.",
+            "Yes. This allows your home to be cleaned with products that are appropriate for your surfaces and preferences. It also helps us keep our pricing affordable. Contact us if you would like a recommended list of supplies to have available.",
     },
     {
-        question: "When will I be charged for a service and how can I make payments?",
+        question: "When will I be charged and how can I pay?",
         answer:
-            "You will be sent an invoice via e-mail following the service. You never pay in advance. Payment options are via credit card or interac e-transfer.",
+            "We will send you an invoice by email after the service is complete. You will never be asked to pay in advance. Payments can be made by credit card or Interac e-Transfer.",
     },
     {
         question: "What if I need to cancel an appointment?",
         answer:
-            "No problem. As long as you give us a minimum of 24 hours notice, you will be able to cancel the visit free of charge.",
+            "No problem. You can cancel or reschedule free of charge when you provide at least 24 hours' notice.",
     },
     {
-        question: "How will my maid access my home?",
+        question: "How will my cleaner access my home?",
         answer:
-            "If you will not be home during our visit, you must contact us ahead of time in order to make arrangements.",
+            "If you will not be home during the appointment, contact us ahead of time so we can arrange a safe and convenient way for your cleaner to enter.",
     },
 ];
 
@@ -46,12 +46,28 @@ export default function Faq() {
         <Layout hero={false}>
             <section className={styles.faqSection}>
                 <Container>
-                    <Subheading
-                        text="Learn more before booking"
-                        alignment="center"
-                    />
-                    <div className={styles.faqContent}>
-                        <h1>Frequently asked questions</h1>
+                    <div className={styles.layout}>
+                        <header className={styles.introduction}>
+                            <Subheading
+                                text="Learn more before booking"
+                                alignment="left"
+                            />
+
+                            <h1>Frequently asked questions</h1>
+
+                            <p className={styles.introText}>
+                                Everything you need to know about our cleaners,
+                                appointments, payments, and preparing your home.
+                            </p>
+
+                            <div className={styles.support}>
+                                <p>Still have a question?</p>
+
+                                <a href="mailto:hello@rosieco.ca">
+                                    hello@rosieco.ca
+                                </a>
+                            </div>
+                        </header>
 
                         <div className={styles.faqList}>
                             {faqItems.map((item) => (

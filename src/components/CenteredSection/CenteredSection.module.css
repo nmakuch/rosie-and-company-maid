@@ -1,6 +1,6 @@
 .centeredSection {
-    padding: 4rem 0;
-    background-color: var(--bg-blue);
+    padding: clamp(5rem, 10vw, 8rem) 0;
+    background: var(--surface-page);
 }
 
 .centeredSection h2,
@@ -9,31 +9,8 @@
 }
 
 .centeredSection h2 {
-    max-width: 48rem;
-    margin: 0 0 var(--spacing-600);
-    line-height: var(--line-height-heading-mobile, 1.15);
+    max-width: 54rem;
+    margin: 0 auto clamp(3.5rem, 7vw, 6rem);
+    line-height: 1.02;
     text-wrap: balance;
-}
-
-/* 550px and wider */
-@media (min-width: 34.375rem) {
-    .centeredSection {
-        padding: 5rem 0;
-    }
-
-    .centeredSection h2 {
-        margin-bottom: var(--spacing-700);
-    }
-}
-
-/* 950px and wider */
-@media (min-width: 59.375rem) {
-    .centeredSection {
-        padding: 7.75rem 0;
-    }
-
-    .centeredSection h2 {
-        margin: 0 auto var(--spacing-1000);
-        line-height: var(--line-height-heading-desktop);
-    }
 }

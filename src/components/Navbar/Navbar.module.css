@@ -2,10 +2,13 @@
     position: relative;
     z-index: 100;
     width: 100%;
-    padding: var(--spacing-300) 0;
-    font-family: "Google Sans Flex", sans-serif;
+    padding: 1.25rem 0;
+    color: var(--text-color-primary);
+    font-family: var(--font-body);
     font-size: var(--font-size-nav-desktop);
     font-weight: 500;
+    background: var(--surface-page);
+    border-bottom: 0.063rem solid rgb(52 46 42 / 8%);
 }
 
 .navContent {
@@ -14,21 +17,19 @@
     justify-content: space-between;
 }
 
-/* Brand */
-
 .brand {
     display: inline-flex;
     align-items: center;
     gap: 1rem;
-    color: var(--color-primary);
+    color: var(--text-color-primary);
     text-decoration: none;
 }
 
 .brandLogo {
     display: block;
-    width: 3rem;
-    height: 3rem;
     flex: 0 0 auto;
+    width: 2.75rem;
+    height: 2.75rem;
     object-fit: contain;
 }
 
@@ -39,32 +40,30 @@
 
 .brandName {
     font-family: var(--font-heading);
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     line-height: 1;
+    letter-spacing: -0.03em;
 }
 
 .brandText small {
-    margin-top: 0.4rem;
+    margin-top: 0.3rem;
     font-size: 0.65rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
 }
-
-
-
-/* Desktop navigation */
 
 .desktopNav {
     display: none;
-    list-style: none;
+    align-items: center;
     margin: 0;
     padding: 0;
+    list-style: none;
 }
 
 .desktopNav li {
-    margin-left: var(--spacing-700);
+    margin-left: clamp(1.5rem, 3vw, 3.25rem);
 }
 
 .desktopNav li:first-of-type {
@@ -77,7 +76,7 @@
     text-decoration-line: underline;
     text-decoration-color: transparent;
     text-decoration-thickness: 0.125rem;
-    text-underline-offset: 0.125rem;
+    text-underline-offset: 0.2rem;
     transition:
         color 150ms ease,
         text-decoration-color 150ms ease;
@@ -85,11 +84,28 @@
 
 .desktopNav a:hover,
 .desktopNav a:visited:hover {
-    color: var(--accent-color);
-    text-decoration-color: var(--accent-color);
+    color: var(--brand-color);
+    text-decoration-color: var(--brand-color);
 }
 
-/* Hamburger button */
+.desktopNav .bookingLink,
+.desktopNav .bookingLink:visited {
+    display: inline-flex;
+    align-items: center;
+    min-height: 3rem;
+    padding: 0.8rem 1.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    background: var(--button-color-primary);
+    border-radius: 0.5rem;
+}
+
+.desktopNav .bookingLink:hover,
+.desktopNav .bookingLink:visited:hover {
+    color: #ffffff;
+    text-decoration: none;
+    background: var(--button-color-primary-hover);
+}
 
 .menuButton,
 .closeButton {
@@ -104,10 +120,10 @@
     width: 2.75rem;
     height: 2.75rem;
     padding: 0.625rem;
-    border: 0;
-    background: transparent;
     color: var(--text-color-primary);
     cursor: pointer;
+    background: transparent;
+    border: 0;
 }
 
 .menuButton span {
@@ -115,9 +131,8 @@
     flex-shrink: 0;
     width: 100%;
     height: 0.1875rem;
-    margin: 0;
-    border-radius: 0.125rem;
     background: currentColor;
+    border-radius: 0.125rem;
 }
 
 .closeButton {
@@ -125,10 +140,10 @@
     width: 2.75rem;
     height: 2.75rem;
     padding: 0;
-    border: 0;
-    background: transparent;
-    color: #000;
+    color: var(--text-color-primary);
     cursor: pointer;
+    background: transparent;
+    border: 0;
 }
 
 .closeButton span {
@@ -137,8 +152,8 @@
     left: 0.5rem;
     width: 1.75rem;
     height: 0.2rem;
-    border-radius: 0.125rem;
     background: currentColor;
+    border-radius: 0.125rem;
 }
 
 .closeButton span:first-child {
@@ -151,10 +166,8 @@
 
 .menuButton:hover,
 .closeButton:hover {
-    color: var(--accent-color);
+    color: var(--brand-color);
 }
-
-/* Mobile dialog */
 
 .mobileDialog {
     width: 100%;
@@ -163,10 +176,10 @@
     max-height: none;
     margin: 0;
     padding: 0;
+    color: var(--text-color-primary);
+    font-family: var(--font-body);
+    background: var(--surface-page);
     border: 0;
-    background: #ffffff;
-    color: #000;
-    font-family: "Google Sans Flex", sans-serif;
 }
 
 .mobileDialog::backdrop {
@@ -178,22 +191,17 @@
 }
 
 .modalContent {
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     min-height: 100%;
     padding: var(--spacing-300) var(--spacing-400);
-    box-sizing: border-box;
 }
 
 .modalHeader {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-}
-
-.modalHeader img {
-    display: block;
-    width: 11.875rem;
 }
 
 .mobileNav {
@@ -208,13 +216,13 @@
 }
 
 .mobileNav li {
-    margin: 0 var(--spacing-150) 0 0;
+    margin-right: var(--spacing-150);
 }
 
 .mobileNav a,
 .mobileNav a:visited {
-    color: #000;
-    font-family: "Google Sans Flex", sans-serif;
+    color: var(--text-color-primary);
+    font-family: var(--font-body);
     font-size: var(--font-size-nav-mobile);
     font-weight: 500;
     line-height: var(--line-height-heading);
@@ -222,7 +230,19 @@
 }
 
 .mobileNav a:hover {
-    color: var(--accent-color);
+    color: var(--brand-color);
+}
+
+.mobileNav .mobileBookingLink,
+.mobileNav .mobileBookingLink:visited {
+    display: inline-flex;
+    justify-content: center;
+    min-width: 9rem;
+    padding: 0.8rem 1.5rem;
+    color: #ffffff;
+    font-size: 1rem;
+    background: var(--button-color-primary);
+    border-radius: 0.5rem;
 }
 
 @keyframes open-menu {
@@ -237,8 +257,6 @@
     }
 }
 
-/* Desktop */
-/* Desktop: 950px and wider */
 @media (min-width: 59.375rem) {
     .desktopNav {
         display: flex;
@@ -246,9 +264,5 @@
 
     .menuButton {
         display: none;
-    }
-
-    .navbar {
-        padding: var(--spacing-500) 0;
     }
 }

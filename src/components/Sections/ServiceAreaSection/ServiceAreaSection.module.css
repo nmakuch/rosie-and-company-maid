@@ -1,57 +1,68 @@
-.map {
-    --image-space-mobile: var(--spacing-1000);
-    background-image: none;
+.section {
+    padding: clamp(6rem, 12vw, 11rem) 0;
+    background: var(--surface-section);
 }
 
-.mobileMap {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin-top: var(--spacing-600);
+.layout {
+    display: grid;
+    align-items: center;
+    gap: clamp(3.5rem, 8vw, 7rem);
+}
+
+.content {
+    max-width: 38rem;
+}
+
+.content h2 {
+    max-width: 20ch;
+}
+
+.content>p {
+    max-width: 34rem;
+    margin: 1.5rem 0 0;
+    color: var(--text-color-secondary);
+    text-wrap: pretty;
 }
 
 .neighborhoods {
-    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
 }
 
-/* min-width: 550px */
-@media (min-width: 34.375rem) {
-    .mobileMap {
-        width: 100%;
-    }
+.neighborhoods li {
+    padding: 0.65rem 1rem;
+    color: var(--brand-color-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    background: var(--surface-card);
+    border: 0.063rem solid rgb(54 95 115 / 16%);
+    border-radius: 999rem;
 }
 
-/* Desktop: 950px and wider */
+.mapFrame {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    overflow: hidden;
+    background: var(--surface-card);
+    border: 0.063rem solid rgb(54 95 115 / 12%);
+    border-radius: clamp(1.5rem, 4vw, 2.5rem);
+    box-shadow: 0 1.5rem 4rem rgb(38 52 59 / 8%);
+}
+
+.mapFrame img {
+    display: block;
+    width: min(100%, 38rem);
+    height: auto;
+}
+
 @media (min-width: 59.375rem) {
-    .mobileMap {
-        display: none;
-    }
-
-    .map {
-        --image-offset: clamp(12.5rem,
-                calc(48.75rem - 45vw),
-                36.25rem);
-        --image-size: 60%;
-
-        background-image:
-            url("/images/service_area/service-area.webp");
-    }
-
-    .neighborhoods {
-        width: 70%;
-    }
-}
-
-/* min-width: 1200px */
-@media (min-width: 75rem) {
-    .map {
-        --image-offset: clamp(22.5rem,
-                calc(56.25rem - 45vw),
-                43.75rem);
-        --image-size: 90%;
-    }
-
-    .neighborhoods {
-        width: 28.125rem;
+    .layout {
+        grid-template-columns: minmax(0, 0.85fr) minmax(28rem, 1.15fr);
     }
 }

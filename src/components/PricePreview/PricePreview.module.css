@@ -1,6 +1,6 @@
 .pricePreview {
     margin-bottom: var(--spacing-1000);
-    background: var(--surface-secondary);
+    background: var(--surface-card);
     padding: var(--spacing-300);
     border: 0.063rem solid var(--border-color-light);
     border-radius: 0.75rem; 

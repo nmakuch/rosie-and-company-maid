@@ -1,9 +1,22 @@
 .primary,
 .secondary {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 3.25rem;
+    padding: 0.875rem 1.75rem;
+    border-radius: 0.5rem;
+    font-family: var(--font-body);
+    font-size: var(--font-size-p-desktop);
+    font-weight: 500;
+    letter-spacing: 0;
+    cursor: pointer;
     transition:
         background-color 150ms ease,
         border-color 150ms ease,
-        color 150ms ease;
+        color 150ms ease,
+        transform 150ms ease;
 }
 
 .primary:focus-visible,
@@ -13,19 +26,9 @@
 }
 
 .primary {
-    padding: var(--spacing-250) var(--spacing-400);
-    font-size: var(--font-size-p-desktop);
-    border-radius: var(--spacing-200);
-    border: none;
-    background-color: var(--button-color-primary);
-    border: 0.188rem solid var(--button-border-color-primary);
     color: var(--text-color-light);
-    font-family: "Google Sans";
-    font-weight: 400;
-    letter-spacing: 0.063rem;
-    box-sizing: border-box;
-    display: inline-block;
-    cursor: pointer;
+    background-color: var(--button-color-primary);
+    border: 0.063rem solid var(--button-border-color-primary);
 }
 
 .primary:hover {
@@ -36,22 +39,13 @@
 .primary:active {
     background-color: var(--button-color-primary-active);
     border-color: var(--button-border-color-primary-active);
+    transform: translateY(0.063rem);
 }
 
 .secondary {
-    padding: var(--spacing-250) var(--spacing-400);
-    font-size: var(--font-size-p-desktop);
-    border-radius: var(--spacing-200);
-    border: 0.188rem solid var(--button-border-color-secondary);
     color: var(--button-text-color-secondary);
-    font-family: "Google Sans";
-    font-weight: 600;
-    letter-spacing: 0.063rem;
-    font-family: "Google Sans";
-    box-sizing: border-box;
-    display: inline-block;
     background-color: transparent;
-    cursor: pointer;
+    border: 0.063rem solid var(--button-border-color-secondary);
 }
 
 .secondary:hover,
@@ -63,18 +57,14 @@ a.secondary:visited:hover {
 
 .secondary:active,
 a.secondary:visited:active {
+    color: var(--button-text-color-secondary-active);
     background-color: var(--button-color-secondary-active);
     border-color: var(--button-border-color-secondary-active);
-    color: var(--button-text-color-secondary-active);
 }
 
 a.primary,
 a.secondary {
     text-decoration: none;
-    transition:
-        background-color 150ms ease,
-        border-color 150ms ease,
-        color 150ms ease;
 }
 
 a:visited.primary {

@@ -1,5 +1,4 @@
 import Button from "../Button/Button";
-import Icon from "../Icon/Icon";
 import styles from "./Pricing.module.css";
 
 type PricingProps = {
@@ -7,25 +6,46 @@ type PricingProps = {
     price: string;
     includes: string[];
     description: string;
-}
+    featured?: boolean;
+};
 
-export default function Pricing({ cleaningPackage, price, includes, description }: PricingProps) {
+export default function Pricing({
+    cleaningPackage,
+    price,
+    includes,
+    description,
+    featured = false,
+}: PricingProps) {
     return (
-        <div className={styles.pricing}>
-            <h3>{cleaningPackage}</h3>
+        <article
+            className={`${styles.pricing} ${featured ? styles.featured : ""}`}
+            aria-label={`${cleaningPackage}, ${price}`}
+        >
+            <div className={styles.headingRow}>
+                <h3>{cleaningPackage}</h3>
+
+                {featured && (
+                    <span className={styles.badge}>Most popular</span>
+                )}
+            </div>
+
             <p className={styles.price}>{price}</p>
 
-            <Button variant="primary" to="/booking">Book now</Button>
-
             <p className={styles.description}>{description}</p>
-            <ul>
-                {includes.map((item) => (
-                    <li key={item}>
-                        <Icon name="checkmark" height={24} width={24} />
-                        <span>{item}</span>
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
+
+            <div className={styles.includes}>
+                <p className={styles.includesHeading}>What’s included</p>
+
+                <ul>
+                    {includes.map((item) => (
+                        <li key={item}>{item}</li>
+                    ))}
+                </ul>
+            </div>
+
+            <Button variant="primary" to="/booking">
+                Book now
+            </Button>
+        </article>
+    );
 }

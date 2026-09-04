@@ -1,31 +1,41 @@
+.pricingSection {
+    padding-block: clamp(5rem, 9vw, 8rem);
+    background: var(--surface-page);
+}
+
+.pricingSection h2 {
+    max-width: 16ch;
+    margin-bottom: clamp(2.75rem, 5vw, 4.5rem);
+}
+
 .pricingContainer {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--spacing-400);
     align-items: stretch;
+    gap: 1.25rem;
+    max-width: 72rem;
+    margin-inline: auto;
 }
 
-/* 706px and wider */
-@media (min-width: 44.125rem) {
+@media (min-width: 44rem) {
     .pricingContainer {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: var(--spacing-500);
+        gap: 1.5rem;
     }
 
-    .pricingContainer > :last-child {
+    .pricingContainer> :last-child {
         grid-column: 1 / -1;
         justify-self: center;
-        width: calc((100% - var(--spacing-500)) / 2);
+        width: calc((100% - 1.5rem) / 2);
     }
 }
 
-/* 1280px and wider */
-@media (min-width: 80.625rem) {
+@media (min-width: 66rem) {
     .pricingContainer {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
-    .pricingContainer > :last-child {
+    .pricingContainer> :last-child {
         grid-column: auto;
         justify-self: stretch;
         width: 100%;

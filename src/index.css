@@ -1,198 +1,184 @@
 :root {
-    /* ----------------------
-    Colors
-    ------------------------ */
-    --text-color-primary: #1c1c1c;
-    --text-color-light: #ffffff;
-    --text-color-error: #C2410C;
-    --accent-color: #004CFF;
 
-    --button-color-primary: #004CFF;
-    --button-color-primary-hover: #003dcc;
-    --button-color-primary-active: #0033ad;
-    --button-text-color-primary: #ffffff;
-    --button-border-color-primary: #004CFF;
-    --button-border-color-primary-hover: #003dcc;
-    --button-border-color-primary-active: #0033ad;
+  --font-body: "Google Sans", sans-serif;
+  --font-heading: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
 
-    --button-color-secondary-hover: #dbe7ff;
-    --button-color-secondary-active: #bdd0fa;
-    --button-text-color-secondary: #004CFF;
-    --button-text-color-secondary-hover: #003dcc;
-    --button-text-color-secondary-active: #0033ad;
-    --button-border-color-secondary: #004CFF;
-    --button-border-color-secondary-hover: #003dcc;
-    --button-border-color-secondary-active: #0033ad;
+  /* ---------
+----- Colors 
+----------*/
 
-    --form-label-color: #363636;
-    --border-color-light: #d9dee8;
-    --border-color-input: #a3a3a3;
-    --text-color-hint: #838282;
-    --bg-blue: #f2f8fe;
-    --bg-error-message: #ffeded;
-    --focus-outline-color: #80a6ff;
+  /* Text */
+  --text-color-primary: #26343b;
+  --text-color-secondary: #5f6a70;
+  --text-color-light: #ffffff;
+  --text-color-error: #9e3f35;
+  --text-color-hint: #747e83;
 
-    /* ----------------------
+  /* Brand */
+  --brand-color: #365f73;
+  --brand-color-muted: #75909d;
+  --brand-color-dark: #294a5a;
+
+  /* Surfaces */
+  --surface-page: #f5f6f6;
+  --surface-card: #ffffff;
+  --surface-section: #e9eef0;
+  --surface-highlight: #dce5e8;
+
+  /* Primary button */
+  --button-color-primary: #365f73;
+  --button-color-primary-hover: #2c5061;
+  --button-color-primary-active: #233f4c;
+  --button-text-color-primary: #ffffff;
+  --button-border-color-primary: #365f73;
+  --button-border-color-primary-hover: #2c5061;
+  --button-border-color-primary-active: #233f4c;
+
+  /* Secondary button */
+  --button-color-secondary-hover: #e6edef;
+  --button-color-secondary-active: #d9e5e9;
+  --button-text-color-secondary: #365f73;
+  --button-text-color-secondary-hover: #294a5a;
+  --button-text-color-secondary-active: #233f4c;
+  --button-border-color-secondary: #75909d;
+  --button-border-color-secondary-hover: #526f7d;
+  --button-border-color-secondary-active: #365f73;
+
+  /* Forms and borders */
+  --form-label-color: #26343b;
+  --border-color-light: #ccd7da;
+  --border-color-input: #8d9aa0;
+  --bg-blue: #e6edef;
+  --bg-error-message: #f9e8e5;
+  --focus-outline-color: #8fb1c1;
+  /* ----------------------
     Desktop font sizing
     ------------------------ */
-    --font-size-h1-desktop: 2.986rem;
-    /* 47.78px */
-    --font-size-h2-desktop: 2.488rem;
-    /* 39.81px */
-    --font-size-h3-desktop: 2.074rem;
-    /* 33.18px */
-    --font-size-h4-desktop: 1.728rem;
-    /* 27.65px */
-    --font-size-h5-desktop: 1.44rem;
-    /* 23.04px */
-    --font-size-h6-desktop: 1.2rem;
-    /* 19.2px */
-    --font-size-p-desktop: 1rem;
-    /* 16px */
-    --font-size-small-desktop: 0.833rem;
-    /* 13.33px */
-    --font-size-caption-desktop: 0.79rem;
-    /* 12.64px */
+  --font-size-h1-desktop: clamp(3.75rem, 5vw, 5.25rem);
+  --font-size-h2-desktop: clamp(2.75rem, 4vw, 4rem);
+  --font-size-h3-desktop: 1.5rem;
 
-    /* ----------------------
+  /* ----------------------
     Mobile font sizing
     ------------------------ */
-    --font-size-h1-mobile: 2.488rem;
-    /* 39.81px */
-    --font-size-h2-mobile: 2.074rem;
-    /* 33.18px */
-    --font-size-h3-mobile: 1.728rem;
-    /* 27.65px */
-    --font-size-h4-mobile: 1.44rem;
-    /* 23.04px */
-    --font-size-h5-mobile: 1.2rem;
-    /* 19.2px */
-    --font-size-h6-mobile: 1.1rem;
-    /* 17.6px */
-    --font-size-p-mobile: 1rem;
-    /* 16px */
-    --font-size-small-mobile: 0.875rem;
-    /* 14px */
-    --font-size-caption-mobile: 0.75rem;
-    /* 12px */
+  --font-size-h1-mobile: clamp(2.75rem, 13vw, 4rem);
+  --font-size-h2-mobile: clamp(2.25rem, 10vw, 3rem);
+  --font-size-h3-mobile: 1.728rem;
 
 
 
-    /* ----------------------
+  /* ----------------------
     Component specific font sizing
     ------------------------ */
-    --font-size-footer: 0.875rem;
-    --font-size-nav-desktop: 0.875rem;
-    --font-size-nav-mobile: 1.5rem;
-    --font-size-total-desktop: 1.5rem;
+  --font-size-footer: 0.875rem;
+  --font-size-nav-desktop: 0.875rem;
+  --font-size-nav-mobile: 1.5rem;
+  --font-size-total-desktop: 1.5rem;
 
-    /* ----------------------
+  /* ----------------------
   Line Heights
     ------------------------ */
-    --line-height-p: 1.7;
-    /* 160% */
-    --line-height-heading: 1.25;
-    /* 130% */
+  --line-height-p: 1.65;
+  --line-height-heading: 1.06;
 
 
-
-    /* ----------------------
+  /* ----------------------
     Spacing variables
     ------------------------ */
-    --spacing-0: 0rem;
-    /* 0px */
-    --spacing-25: 0.125rem;
-    /* 2px */
-    --spacing-50: 0.25rem;
-    /* 4px */
-    --spacing-75: 0.375rem;
-    /* 6px */
-    --spacing-100: 0.5rem;
-    /* 8px */
-    --spacing-125: 0.625rem;
-    /* 10px */
-    --spacing-150: 0.75rem;
-    /* 12px */
-    --spacing-175: 0.875rem;
-    /* 14px */
-    --spacing-200: 1rem;
-    /* 16px */
-    --spacing-225: 1.125rem;
-    /* 18px */
-    --spacing-250: 1.25rem;
-    /* 20px */
-    --spacing-300: 1.5rem;
-    /* 24px */
-    --spacing-350: 1.75rem;
-    /* 28px */
-    --spacing-400: 2rem;
-    /* 32px */
-    --spacing-450: 2.25rem;
-    /* 36px */
-    --spacing-500: 2.5rem;
-    /* 40px */
-    --spacing-550: 2.75rem;
-    /* 44px */
-    --spacing-600: 3rem;
-    /* 48px */
-    --spacing-650: 3.25rem;
-    /* 52px */
-    --spacing-700: 3.5rem;
-    /* 56px */
-    --spacing-750: 3.75rem;
-    /* 60px */
-    --spacing-800: 4rem;
-    /* 64px */
-    --spacing-850: 4.25rem;
-    /* 68px */
-    --spacing-900: 4.5rem;
-    /* 72px */
-    --spacing-950: 4.75rem;
-    /* 76px */
-    --spacing-1000: 5rem;
-    /* 80px */
-    --spacing-1050: 5.25rem;
-    /* 84px */
-    --spacing-1100: 5.5rem;
-    /* 88px */
-    --spacing-1150: 5.75rem;
-    /* 92px */
-    --spacing-1200: 6rem;
-    /* 96px */
-    --spacing-1250: 6.25rem;
-    /* 100px */
-    --spacing-1300: 6.5rem;
-    /* 104px */
-    --spacing-1350: 6.75rem;
-    /* 108px */
-    --spacing-1400: 7rem;
-    /* 112px */
-    --spacing-1450: 7.25rem;
-    /* 116px */
-    --spacing-1500: 7.5rem;
-    /* 120px */
-    --spacing-1550: 7.75rem;
-    /* 124px */
-    --spacing-1600: 8rem;
-    /* 128px */
-    --spacing-1650: 8.25rem;
-    /* 132px */
-    --spacing-1700: 8.5rem;
-    /* 136px */
-    --spacing-1750: 8.75rem;
-    /* 140px */
-    --spacing-1800: 9rem;
-    /* 144px */
-    --spacing-1850: 9.25rem;
-    /* 148px */
-    --spacing-1900: 9.5rem;
-    /* 152px */
-    --spacing-1950: 9.75rem;
-    /* 156px */
-    --spacing-2000: 10rem;
-    /* 160px */
-    --spacing-2050: 10.25rem;
-    /* 164px */
-    --spacing-2100: 10.5rem;
-    /* 168px */
+  --spacing-0: 0rem;
+  /* 0px */
+  --spacing-25: 0.125rem;
+  /* 2px */
+  --spacing-50: 0.25rem;
+  /* 4px */
+  --spacing-75: 0.375rem;
+  /* 6px */
+  --spacing-100: 0.5rem;
+  /* 8px */
+  --spacing-125: 0.625rem;
+  /* 10px */
+  --spacing-150: 0.75rem;
+  /* 12px */
+  --spacing-175: 0.875rem;
+  /* 14px */
+  --spacing-200: 1rem;
+  /* 16px */
+  --spacing-225: 1.125rem;
+  /* 18px */
+  --spacing-250: 1.25rem;
+  /* 20px */
+  --spacing-300: 1.5rem;
+  /* 24px */
+  --spacing-350: 1.75rem;
+  /* 28px */
+  --spacing-400: 2rem;
+  /* 32px */
+  --spacing-450: 2.25rem;
+  /* 36px */
+  --spacing-500: 2.5rem;
+  /* 40px */
+  --spacing-550: 2.75rem;
+  /* 44px */
+  --spacing-600: 3rem;
+  /* 48px */
+  --spacing-650: 3.25rem;
+  /* 52px */
+  --spacing-700: 3.5rem;
+  /* 56px */
+  --spacing-750: 3.75rem;
+  /* 60px */
+  --spacing-800: 4rem;
+  /* 64px */
+  --spacing-850: 4.25rem;
+  /* 68px */
+  --spacing-900: 4.5rem;
+  /* 72px */
+  --spacing-950: 4.75rem;
+  /* 76px */
+  --spacing-1000: 5rem;
+  /* 80px */
+  --spacing-1050: 5.25rem;
+  /* 84px */
+  --spacing-1100: 5.5rem;
+  /* 88px */
+  --spacing-1150: 5.75rem;
+  /* 92px */
+  --spacing-1200: 6rem;
+  /* 96px */
+  --spacing-1250: 6.25rem;
+  /* 100px */
+  --spacing-1300: 6.5rem;
+  /* 104px */
+  --spacing-1350: 6.75rem;
+  /* 108px */
+  --spacing-1400: 7rem;
+  /* 112px */
+  --spacing-1450: 7.25rem;
+  /* 116px */
+  --spacing-1500: 7.5rem;
+  /* 120px */
+  --spacing-1550: 7.75rem;
+  /* 124px */
+  --spacing-1600: 8rem;
+  /* 128px */
+  --spacing-1650: 8.25rem;
+  /* 132px */
+  --spacing-1700: 8.5rem;
+  /* 136px */
+  --spacing-1750: 8.75rem;
+  /* 140px */
+  --spacing-1800: 9rem;
+  /* 144px */
+  --spacing-1850: 9.25rem;
+  /* 148px */
+  --spacing-1900: 9.5rem;
+  /* 152px */
+  --spacing-1950: 9.75rem;
+  /* 156px */
+  --spacing-2000: 10rem;
+  /* 160px */
+  --spacing-2050: 10.25rem;
+  /* 164px */
+  --spacing-2100: 10.5rem;
+  /* 168px */
 }

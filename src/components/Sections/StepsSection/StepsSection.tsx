@@ -1,5 +1,5 @@
-import Step from "../../Step/Step";
 import CenteredSection from "../../CenteredSection/CenteredSection";
+import Step from "../../Step/Step";
 import styles from "./StepsSection.module.css";
 
 export default function StepsSection() {
@@ -8,22 +8,28 @@ export default function StepsSection() {
             subheading="Simple, convenient, stress-free"
             heading="Get a clean home in three easy steps"
             id="how-it-works"
+            className={styles.stepsSection}
         >
             <div className={styles.stepsContainer}>
                 <Step
-                    src="/images/steps/step_1.webp"
+                    number="1"
+                    src="/images/steps/step_book.webp"
                     heading="Book your appointment"
-                    text="Use our online form to book a visit or call us at (123) 456-7890 to schedule an appointment."
+                    text="Choose your service, preferred date, and time using our simple online form."
                 />
+
                 <Step
-                    src="/images/steps/step_2.webp"
+                    number="2"
+                    src="/images/steps/step_clean.webp"
                     heading="We clean your home"
-                    text="Our professional cleaning staff will clean your home to your exact specifications every visit."
+                    text="Our professional team arrives on time and cleans your home with care and attention to detail."
                 />
+
                 <Step
-                    src="/images/steps/step_3.webp"
+                    number="3"
+                    src="/images/steps/step_relax.webp"
                     heading="Relax and save"
-                    text="You can also save up to 15% off when scheduling bi-weekly visits with Rosie and Company"
+                    text="Come home to a fresh space and save up to 15% when you schedule bi-weekly visits."
                 />
             </div>
         </CenteredSection>

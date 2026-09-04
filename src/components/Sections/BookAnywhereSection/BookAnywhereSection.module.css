@@ -1,46 +1,80 @@
-.bookAnywhere {
-    --image-space-mobile: var(--spacing-1000);
-    background-image: none;
+.section {
+    padding: clamp(5rem, 10vw, 8rem) 0;
+    background: var(--surface-section);
 }
 
-.mobileBookAnywhere {
+.layout {
+    display: grid;
+    align-items: center;
+    gap: clamp(3rem, 8vw, 8rem);
+}
+
+.content {
+    max-width: 38rem;
+}
+
+.content h2 {
+    max-width: 20ch;
+}
+
+.intro {
+    max-width: 34rem;
+    margin: 1.5rem 0 0;
+    color: var(--text-color-secondary);
+    text-wrap: pretty;
+}
+
+.details {
+    display: grid;
+    gap: 0.8rem;
+    margin: 2rem 0 0;
+    padding: 0;
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.details li {
+    position: relative;
+    padding-left: 1.35rem;
+}
+
+.details li::before {
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 0.4rem;
+    height: 0.4rem;
+    content: "";
+    background: var(--brand-color-muted);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
+
+.visual {
     display: flex;
-    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.visual img {
+    display: block;
+    width: min(100%, 34rem);
     height: auto;
-    margin-top: var(--spacing-400);
 }
 
-/* min-width: 550px */
-@media (min-width: 34.375rem) {
-    .mobileBookAnywhere {
-        width: 100%;
-        margin-top: var(--spacing-600);
-    }
-}
-
-/* Desktop: 950px and wider */
 @media (min-width: 59.375rem) {
-    .mobileBookAnywhere {
-        display: none;
+    .layout {
+        grid-template-columns: minmax(0, 1.1fr) minmax(25rem, 0.9fr);
+        gap: clamp(3rem, 5vw, 5rem);
     }
 
-    .bookAnywhere {
-        --image-offset: clamp(16.25rem,
-                calc(52.5rem - 45vw),
-                40rem);
-        --image-size: 60%;
-
-        background-image:
-            url("/images/book_anywhere/book-anywhere.webp");
+    .content {
+        max-width: 44rem;
     }
-}
 
-/* min-width: 1200px */
-@media (min-width: 75rem) {
-    .bookAnywhere {
-        --image-offset: clamp(22.5rem,
-                calc(56.25rem - 45vw),
-                43.75rem);
-        --image-size: 70%;
+    .visual img {
+        width: min(130%, 42rem);
+        max-width: none;
     }
 }

@@ -1,8 +1,4 @@
-import {
-    useEffect,
-    useRef,
-    useState,
-} from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Container from "../Container/Container";
@@ -13,7 +9,6 @@ const navigationLinks = [
     { to: "/#service-area", label: "Service area" },
     { to: "/#pricing", label: "Pricing" },
     { to: "/faq", label: "FAQ" },
-    { to: "/booking", label: "Booking" },
 ];
 
 export default function Navbar() {
@@ -34,9 +29,9 @@ export default function Navbar() {
         }
     }, [menuOpen]);
 
-    const closeMenu = () => {
+    function closeMenu() {
         setMenuOpen(false);
-    };
+    }
 
     return (
         <nav className={styles.navbar}>
@@ -53,10 +48,7 @@ export default function Navbar() {
                         />
 
                         <span className={styles.brandText}>
-                            <span className={styles.brandName}>
-                                Rosie & Company
-                            </span>
-
+                            <span className={styles.brandName}>Rosie & Company</span>
                             <small>Cleaning service</small>
                         </span>
                     </Link>
@@ -64,11 +56,15 @@ export default function Navbar() {
                     <ul className={styles.desktopNav}>
                         {navigationLinks.map((link) => (
                             <li key={link.to}>
-                                <Link to={link.to}>
-                                    {link.label}
-                                </Link>
+                                <Link to={link.to}>{link.label}</Link>
                             </li>
                         ))}
+
+                        <li>
+                            <Link className={styles.bookingLink} to="/booking">
+                                Book now
+                            </Link>
+                        </li>
                     </ul>
 
                     <button
@@ -110,14 +106,21 @@ export default function Navbar() {
                     <ul className={styles.mobileNav}>
                         {navigationLinks.map((link) => (
                             <li key={link.to}>
-                                <Link
-                                    to={link.to}
-                                    onClick={closeMenu}
-                                >
+                                <Link to={link.to} onClick={closeMenu}>
                                     {link.label}
                                 </Link>
                             </li>
                         ))}
+
+                        <li>
+                            <Link
+                                className={styles.mobileBookingLink}
+                                to="/booking"
+                                onClick={closeMenu}
+                            >
+                                Book now
+                            </Link>
+                        </li>
                     </ul>
                 </div>
             </dialog>

@@ -2,37 +2,13 @@
     box-sizing: border-box;
     flex: 1;
     width: 100%;
-    padding: 4rem 0;
-    background-color: #ffffff;
+    padding: clamp(3rem, 6vw, 5.5rem) 0;
+    background: var(--surface-page);
     text-align: left;
 }
 
-.bookingSection .formContainer {
-    display: flex;
-    justify-content: center;
+.formContainer {
     width: 100%;
     max-width: 80rem;
     margin-inline: auto;
-}
-
-/* 550px and wider */
-@media (min-width: 34.375rem) {
-    .bookingSection {
-        padding: 5rem 0;
-    }
-}
-
-/* 950px and wider */
-@media (min-width: 59.375rem) {
-    .bookingSection {
-        background-color: var(--bg-blue);
-    }
-}
-
-/* min-width: 1200px */
-@media (min-width: 75rem) {
-    .bookingSection {
-        padding: var(--spacing-1000) 0;
-        background-color: var(--bg-blue);
-    }
 }
