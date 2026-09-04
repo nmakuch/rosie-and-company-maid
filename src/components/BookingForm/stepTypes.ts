@@ -6,8 +6,6 @@ import type {
 
 import type { BookingFormData } from "./bookingSchema";
 
-
-
 export type StartStepProps = {
     onStart: () => void;
 };
@@ -15,10 +13,6 @@ export type StartStepProps = {
 export type StepNavigationProps = {
     onBack: () => void;
     onNext: () => void;
-};
-
-export type FinalStepNavigationProps = {
-    onBack: () => void;
 };
 
 export type FormStepProps = {
@@ -42,11 +36,6 @@ export type CleaningOptionStepProps = {
     options: readonly CleaningOption[];
     register: UseFormRegister<BookingFormData>;
     errors: FieldErrors<BookingFormData>;
-    cleaning: CleaningOption | undefined;
-    addOns: AddOnOption[];
-    subtotal: number;
-    tax: number;
-    totalPrice: number;
 } & StepNavigationProps;
 
 export type AddOnOption = {
@@ -55,23 +44,12 @@ export type AddOnOption = {
     price: number;
 };
 
-export type AddOnsStepProps = {
-    cleaning: CleaningOption | undefined;
-    addOns: AddOnOption[];
-    subtotal: number;
-    tax: number;
-    totalPrice: number;
-} & FormStepProps;
+export type AddOnsStepProps = FormStepProps;
 
 export type ReviewStepProps = {
     booking: BookingFormData;
     editStep: (targetStep: number) => void;
     onBack: () => void;
-    cleaning: CleaningOption | undefined;
-    addOns: AddOnOption[];
-    subtotal: number;
-    tax: number;
-    totalPrice: number;
     isSubmitting: boolean;
     submitError: string | null;
 };

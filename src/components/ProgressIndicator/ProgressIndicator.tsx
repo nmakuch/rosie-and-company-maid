@@ -9,7 +9,10 @@ export default function ProgressIndicator({
     currentStep,
     totalSteps,
 }: ProgressIndicatorProps) {
-    const progress = (currentStep / totalSteps) * 100;
+    const progress =
+        totalSteps > 0
+            ? Math.min((currentStep / totalSteps) * 100, 100)
+            : 0;
 
     return (
         <div className={styles.progressIndicator}>
@@ -21,7 +24,7 @@ export default function ProgressIndicator({
                 className={styles.track}
                 role="progressbar"
                 aria-label="Booking progress"
-                aria-valuemin={1}
+                aria-valuemin={0}
                 aria-valuemax={totalSteps}
                 aria-valuenow={currentStep}
                 aria-valuetext={`Step ${currentStep} of ${totalSteps}`}

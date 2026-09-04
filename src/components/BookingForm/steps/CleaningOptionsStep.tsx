@@ -1,7 +1,6 @@
-import styles from "../BookingForm.module.css";
 import Button from "../../Button/Button";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
-import PricePreview from "../../PricePreview/PricePreview";
+import styles from "../BookingForm.module.css";
 
 import type { CleaningOptionStepProps } from "../stepTypes";
 
@@ -11,34 +10,40 @@ export default function CleaningOptionStep({
     onBack,
     onNext,
     cleaningType,
-    cleaning,
-    addOns,
-    subtotal,
-    tax,
-    totalPrice,
-    options
+    options,
 }: CleaningOptionStepProps) {
+    const isHourly = cleaningType === "hourly";
 
     return (
         <div className={styles.formStep}>
             <h2>
-                {cleaningType === "hourly"
+                {isHourly
                     ? "How much cleaning time do you need?"
-                    : "Which option would you like to book?"}
+                    : "Which package works best?"}
             </h2>
 
             <p className={styles.supportingText}>
-                {cleaningType === "hourly"
-                    ? "Choose the session length that best fits your cleaning needs. We'll make the most of your time in every visit."
-                    : "Choose the package that best matches the level of cleaning your home needs, with options for every type of visit."}
+                {isHourly
+                    ? "Choose the session length that best fits your home and the amount of cleaning you need."
+                    : "Choose the package that best matches the level of cleaning your home needs."}
             </p>
 
-            <fieldset className={styles.inputContainer}>
+            <fieldset
+                className={styles.inputContainer}
+                aria-describedby="cleaning-option-hint"
+            >
                 <legend>
-                    {cleaningType === "hourly"
+                    {isHourly
                         ? "Choose a session length"
                         : "Choose a cleaning package"}
                 </legend>
+
+                <p
+                    className={styles.hintText}
+                    id="cleaning-option-hint"
+                >
+                    Your price estimate will update when you make a selection.
+                </p>
 
                 {errors.cleaningOption && (
                     <ErrorMessage>
@@ -81,14 +86,6 @@ export default function CleaningOptionStep({
                 </div>
             </fieldset>
 
-            <PricePreview
-                cleaning={cleaning}
-                addOns={addOns}
-                subtotal={subtotal}
-                tax={tax}
-                totalPrice={totalPrice}
-            />
-
             <div className={styles.buttonContainer}>
                 <Button
                     variant="secondary"
@@ -107,5 +104,5 @@ export default function CleaningOptionStep({
                 </Button>
             </div>
         </div>
-    )
+    );
 }

@@ -1,11 +1,8 @@
-import styles from "../BookingForm.module.css";
-
 import Button from "../../Button/Button";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
-import PricePreview from "../../PricePreview/PricePreview";
+import styles from "../BookingForm.module.css";
 
 import { addOnOptions } from "../bookingOptions";
-
 import type { AddOnsStepProps } from "../stepTypes";
 
 export default function AddOnsStep({
@@ -13,27 +10,24 @@ export default function AddOnsStep({
     errors,
     onBack,
     onNext,
-    cleaning,
-    addOns,
-    subtotal,
-    tax,
-    totalPrice,
 }: AddOnsStepProps) {
     return (
         <div className={styles.formStep}>
-            <h2>Do you want any additional add-ons?</h2>
+            <h2>Would you like any add-ons?</h2>
 
             <p className={styles.supportingText}>
-                Enhance your cleaning with optional add-ons tailored to your home's
-                needs. Select any that you'd like to include with your appointment.
+                Customize your appointment with any additional cleaning
+                services your home needs.
             </p>
 
-            <fieldset className={styles.inputContainer}>
-                <legend>Choose the add-ons you'd like</legend>
+            <fieldset
+                className={styles.inputContainer}
+                aria-describedby="add-ons-hint"
+            >
+                <legend>Optional add-ons</legend>
 
-                <p className={styles.hintText}>
-                    These add-ons are optional, so you can continue without
-                    selecting anything.
+                <p className={styles.hintText} id="add-ons-hint">
+                    Select as many as you need, or continue without choosing any.
                 </p>
 
                 {errors.addOns && (
@@ -72,7 +66,7 @@ export default function AddOnsStep({
                                     </span>
 
                                     <span className={styles.selectionPrice}>
-                                        ${addOn.price.toFixed(2)}
+                                        +${addOn.price.toFixed(2)}
                                     </span>
                                 </label>
                             </div>
@@ -80,14 +74,6 @@ export default function AddOnsStep({
                     })}
                 </div>
             </fieldset>
-
-            <PricePreview
-                cleaning={cleaning}
-                addOns={addOns}
-                subtotal={subtotal}
-                tax={tax}
-                totalPrice={totalPrice}
-            />
 
             <div className={styles.buttonContainer}>
                 <Button

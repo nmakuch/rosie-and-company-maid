@@ -10,9 +10,7 @@ export default function StartStep({
             <h1>Book an appointment</h1>
 
             <p className={styles.intro}>
-                Tell us a little about your home and the cleaning service
-                you&apos;re looking for. We&apos;ll guide you through a few
-                simple steps to gather the information we need.
+                Tell us a little about your home and the cleaning service you're looking for. We’ll guide you through a few simple steps to gather the information we need and create a plan that suits your space.
             </p>
 
             <ul className={styles.startDetails}>

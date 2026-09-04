@@ -1,33 +1,32 @@
-import styles from "../BookingForm.module.css";
 import Button from "../../Button/Button";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import styles from "../BookingForm.module.css";
 
 import type { FormStepProps } from "../stepTypes";
 
 export default function DateStep({
-    errors,
     register,
+    errors,
     onBack,
-    onNext
+    onNext,
 }: FormStepProps) {
     return (
         <div className={styles.formStep}>
-            <h2>What day would you like your cleaning done?</h2>
+            <h2>Which day works best?</h2>
 
             <p className={styles.supportingText}>
-                Choose your preferred cleaning date, and we'll confirm availability before finalizing your cleaning appointment.
+                Choose your preferred cleaning date. We&apos;ll confirm
+                availability before your appointment is finalized.
             </p>
 
             <div className={styles.inputContainer}>
                 <label htmlFor="date">
-                    Preferred appointment date
+                    Preferred date
                 </label>
 
-                <p className={styles.hintText}>
-                    Note: Your requested date is subject to availability.
+                <p className={styles.hintText} id="date-hint">
+                    Your requested date is subject to availability.
                 </p>
-
-
 
                 {errors.date && (
                     <ErrorMessage>
@@ -39,15 +38,15 @@ export default function DateStep({
                     {...register("date")}
                     type="date"
                     id="date"
-                    name="date"
+                    aria-describedby="date-hint"
                 />
             </div>
 
             <div className={styles.buttonContainer}>
                 <Button
+                    variant="secondary"
                     type="button"
                     onClick={onBack}
-                    variant="secondary"
                 >
                     Back
                 </Button>
@@ -61,5 +60,5 @@ export default function DateStep({
                 </Button>
             </div>
         </div>
-    )
+    );
 }

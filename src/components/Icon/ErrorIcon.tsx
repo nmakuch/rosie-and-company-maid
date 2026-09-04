@@ -7,7 +7,7 @@ export default function ErrorIcon(
         <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 40 40"
-            fill="#C2410C"
+            fill="currentColor"
             {...props}
         >
             <circle
@@ -15,7 +15,7 @@ export default function ErrorIcon(
                 cy="20"
                 r="18"
                 fill="none"
-                stroke="#C2410C"
+                stroke="currentColor"
                 strokeWidth="4"
             />
 
@@ -23,6 +23,5 @@ export default function ErrorIcon(
 
             <circle cx="20" cy="28" r="2" />
         </svg>
-
     );
 }

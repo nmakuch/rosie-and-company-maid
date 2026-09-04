@@ -1,39 +1,47 @@
-import styles from "../BookingForm.module.css";
 import Button from "../../Button/Button";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import styles from "../BookingForm.module.css";
 
 import type { FormStepProps } from "../stepTypes";
 
 export default function EmailStep({
     register,
     errors,
+    onBack,
     onNext,
-    onBack
 }: FormStepProps) {
     return (
         <div className={styles.formStep}>
-            <h2>What's your email?</h2>
+            <h2>What&apos;s your email?</h2>
+
             <p className={styles.supportingText}>
-                We'll use this email address to confirm your booking and send appointment updates.
+                We&apos;ll use your email address to confirm your booking
+                and send important updates about your appointment.
             </p>
 
             <div className={styles.inputContainer}>
                 <label htmlFor="email">
-                    Email address:
+                    Email address
                 </label>
-                <p className={styles.hintText}>
-                    Example: jane_doe@email.com
+
+                <p className={styles.hintText} id="email-hint">
+                    Example: jane@email.com
                 </p>
+
                 {errors.email && (
                     <ErrorMessage>
                         {errors.email.message}
                     </ErrorMessage>
                 )}
+
                 <input
                     {...register("email")}
-                    placeholder="Email address"
+                    type="email"
                     id="email"
-                    name="email"
+                    placeholder="jane@email.com"
+                    autoComplete="email"
+                    inputMode="email"
+                    aria-describedby="email-hint"
                 />
             </div>
 
@@ -45,6 +53,7 @@ export default function EmailStep({
                 >
                     Back
                 </Button>
+
                 <Button
                     variant="primary"
                     type="button"
@@ -54,5 +63,5 @@ export default function EmailStep({
                 </Button>
             </div>
         </div>
-    )
+    );
 }

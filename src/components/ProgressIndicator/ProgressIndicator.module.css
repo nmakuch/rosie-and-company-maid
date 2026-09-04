@@ -1,6 +1,5 @@
 .progressIndicator {
     width: 100%;
-    margin-bottom: var(--spacing-500);
 }
 
 .stepText {
@@ -14,27 +13,19 @@
     width: 100%;
     height: 0.25rem;
     overflow: hidden;
-    border-radius: 62.438rem;
-    background-color: #e4e8f0;
+    background: rgb(54 95 115 / 14%);
+    border-radius: 100rem;
 }
 
 .progress {
     height: 100%;
+    background: var(--brand-color);
     border-radius: inherit;
-    background-color: var(--brand-color);
     transition: width 300ms ease;
 }
 
-/* 550px and wider */
-@media (min-width: 34.375rem) {
-    .progressIndicator {
-        margin-bottom: var(--spacing-700);
-    }
-}
-
-/* 950px and wider */
-@media (min-width: 59.375rem) {
-    .progressIndicator {
-        margin-bottom: var(--spacing-1200);
+@media (prefers-reduced-motion: reduce) {
+    .progress {
+        transition: none;
     }
 }

@@ -1,38 +1,46 @@
-import styles from "../BookingForm.module.css"
-import ErrorMessage from "../../ErrorMessage/ErrorMessage";
 import Button from "../../Button/Button";
+import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import styles from "../BookingForm.module.css";
+
 import type { FormStepProps } from "../stepTypes";
 
 export default function NameStep({
     register,
     errors,
     onBack,
-    onNext
-} : FormStepProps) {
+    onNext,
+}: FormStepProps) {
     return (
         <div className={styles.formStep}>
-            <h2>What's your name?</h2>
+            <h2>What&apos;s your name?</h2>
+
             <p className={styles.supportingText}>
-                Please provide a name so we can personalize your booking and
-                communicate with you throughout the process.
+                Please provide your name so we can personalize your booking
+                and communicate with you throughout the process.
             </p>
 
             <div className={styles.inputContainer}>
                 <label htmlFor="fullName">
-                    Full name:
+                    Full name
                 </label>
-                <p className={styles.hintText}>
-                    Example: Jane doe
+
+                <p className={styles.hintText} id="fullName-hint">
+                    Example: Jane Doe
                 </p>
+
                 {errors.fullName && (
                     <ErrorMessage>
                         {errors.fullName.message}
                     </ErrorMessage>
                 )}
+
                 <input
                     {...register("fullName")}
-                    placeholder="First name"
+                    type="text"
                     id="fullName"
+                    placeholder="Jane Doe"
+                    autoComplete="name"
+                    aria-describedby="fullName-hint"
                 />
             </div>
 
@@ -44,6 +52,7 @@ export default function NameStep({
                 >
                     Back
                 </Button>
+
                 <Button
                     variant="primary"
                     type="button"
@@ -53,5 +62,5 @@ export default function NameStep({
                 </Button>
             </div>
         </div>
-    )
+    );
 }

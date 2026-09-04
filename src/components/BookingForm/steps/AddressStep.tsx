@@ -1,30 +1,31 @@
-import styles from "../BookingForm.module.css";
 import Button from "../../Button/Button";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import styles from "../BookingForm.module.css";
 
 import type { FormStepProps } from "../stepTypes";
 
 export default function AddressStep({
-    errors,
     register,
+    errors,
+    onBack,
     onNext,
-    onBack
 }: FormStepProps) {
     return (
         <div className={styles.formStep}>
-            <h2>What is your address?</h2>
+            <h2>Where should we clean?</h2>
+
             <p className={styles.supportingText}>
-                This helps us confirm that we service your area and ensures we have the
-                correct location for your appointment.
+                Enter the address where the cleaning will take place so we
+                can confirm that it is within our service area.
             </p>
 
             <div className={styles.inputContainer}>
                 <label htmlFor="address">
-                    Home address
+                    Street address
                 </label>
 
-                <p className={styles.hintText}>
-                    Example: 123 Main Street, Toronto, ON
+                <p className={styles.hintText} id="address-hint">
+                    Example: 123 Main Street
                 </p>
 
                 {errors.address && (
@@ -35,9 +36,11 @@ export default function AddressStep({
 
                 <input
                     {...register("address")}
-                    placeholder="Address"
+                    type="text"
                     id="address"
-                    name="address"
+                    placeholder="123 Main Street"
+                    autoComplete="street-address"
+                    aria-describedby="address-hint"
                 />
             </div>
 
@@ -46,10 +49,9 @@ export default function AddressStep({
                     Postal code
                 </label>
 
-                <p className={styles.hintText}>
+                <p className={styles.hintText} id="postal-code-hint">
                     Example: M5V 3L9
                 </p>
-
 
                 {errors.postalCode && (
                     <ErrorMessage>
@@ -59,17 +61,21 @@ export default function AddressStep({
 
                 <input
                     {...register("postalCode")}
-                    placeholder="Postal code"
+                    type="text"
                     id="postalCode"
-                    name="postalCode"
+                    placeholder="M5V 3L9"
+                    autoComplete="postal-code"
+                    autoCapitalize="characters"
+                    spellCheck="false"
+                    aria-describedby="postal-code-hint"
                 />
             </div>
 
             <div className={styles.buttonContainer}>
                 <Button
+                    variant="secondary"
                     type="button"
                     onClick={onBack}
-                    variant="secondary"
                 >
                     Back
                 </Button>
@@ -83,5 +89,5 @@ export default function AddressStep({
                 </Button>
             </div>
         </div>
-    )
+    );
 }

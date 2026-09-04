@@ -1,42 +1,76 @@
 .pricePreview {
-    margin-bottom: var(--spacing-1000);
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    padding: 1.25rem;
     background: var(--surface-card);
-    padding: var(--spacing-300);
-    border: 0.063rem solid var(--border-color-light);
-    border-radius: 0.75rem; 
+    border: 0.063rem solid rgb(54 95 115 / 20%);
+    border-radius: 1rem;
 }
 
-.priceRow:first-of-type {
-    padding-top: 0;
+.heading {
+    margin: 0 0 0.75rem;
+    color: var(--brand-color);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    text-transform: uppercase;
 }
 
-.priceRow,
-.totalRow {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: var(--spacing-200) 0;
+.emptyState {
+    margin: 0;
+    color: var(--text-color-secondary);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.selectedItems {
+    padding-bottom: 0.75rem;
+    border-bottom: 0.063rem solid rgb(54 95 115 / 16%);
+}
+
+.calculation {
+    padding: 0.75rem 0;
+    border-bottom: 0.063rem solid rgb(54 95 115 / 16%);
 }
 
 .priceRow {
-    border-bottom: 0.063rem solid var(--border-color-light);
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 1rem;
+    padding: 0.35rem 0;
+    color: var(--text-color-secondary);
+    font-size: 0.875rem;
+    line-height: 1.45;
+}
+
+.priceRow span:first-child {
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 
 .priceRow span:last-child {
+    color: var(--text-color-primary);
     font-weight: 600;
     text-align: right;
+    white-space: nowrap;
 }
 
 .totalRow {
     display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-size: var(--font-size-total-desktop);
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    gap: 1rem;
+    padding-top: 1rem;
+    color: var(--text-color-primary);
+    font-size: 1rem;
     font-weight: 700;
+    line-height: 1.4;
 }
 
-.priceAddition {
-    margin-bottom: var(--spacing-600);
+.totalRow span:last-child {
+    text-align: right;
+    white-space: nowrap;
 }

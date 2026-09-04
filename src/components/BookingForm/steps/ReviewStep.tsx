@@ -1,110 +1,134 @@
-import styles from "../BookingForm.module.css";
 import Button from "../../Button/Button";
-import PricePreview from "../../PricePreview/PricePreview";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import styles from "../BookingForm.module.css";
 
-import type { ReviewStepProps } from "../stepTypes";
+import {
+    addOnOptions,
+    hourlyOptions,
+    packageOptions,
+} from "../bookingOptions";
+
 import { BOOKING_STEPS } from "../bookingSteps";
+import type { ReviewStepProps } from "../stepTypes";
+
+function formatBookingDate(value: string) {
+    const [year, month, day] = value.split("-").map(Number);
+
+    if (!year || !month || !day) {
+        return value || "Not provided";
+    }
+
+    return new Intl.DateTimeFormat("en-CA", {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+    }).format(new Date(year, month - 1, day));
+}
 
 export default function ReviewStep({
     booking,
-    cleaning,
-    addOns,
-    subtotal,
-    tax,
-    totalPrice,
     editStep,
     onBack,
     isSubmitting,
-    submitError
+    submitError,
 }: ReviewStepProps) {
+    const cleaningOptions =
+        booking.cleaningType === "hourly"
+            ? hourlyOptions
+            : packageOptions;
 
-    const formFields = [
+    const selectedCleaning = cleaningOptions.find(
+        (option) => option.value === booking.cleaningOption
+    );
+
+    const selectedAddOns = (booking.addOns ?? []).map(
+        (value) =>
+            addOnOptions.find((addOn) => addOn.value === value)?.label ??
+            value
+    );
+
+    const reviewItems = [
         {
-            key: "fullName",
             label: "Full name",
+            value: booking.fullName,
             step: BOOKING_STEPS.NAME,
         },
         {
-            key: "email",
             label: "Email address",
+            value: booking.email,
             step: BOOKING_STEPS.EMAIL,
         },
         {
-            key: "address",
-            label: "Home address",
+            label: "Street address",
+            value: booking.address,
             step: BOOKING_STEPS.ADDRESS,
         },
         {
-            key: "postalCode",
             label: "Postal code",
+            value: booking.postalCode.toUpperCase(),
             step: BOOKING_STEPS.ADDRESS,
         },
         {
-            key: "date",
             label: "Preferred date",
+            value: formatBookingDate(booking.date),
             step: BOOKING_STEPS.DATE,
         },
         {
-            key: "time",
             label: "Preferred time",
+            value: booking.time ?? "Not selected",
             step: BOOKING_STEPS.TIME,
         },
         {
-            key: "cleaningType",
-            label: "Cleaning type",
+            label: "Cleaning plan",
+            value:
+                booking.cleaningType === "hourly"
+                    ? "Hourly cleaning"
+                    : "Fixed-price package",
             step: BOOKING_STEPS.CLEANING_TYPE,
         },
         {
-            key: "cleaningOption",
             label: "Cleaning option",
+            value: selectedCleaning?.label ?? "Not selected",
             step: BOOKING_STEPS.CLEANING_OPTION,
         },
         {
-            key: "addOns",
             label: "Add-ons",
+            value:
+                selectedAddOns.length > 0
+                    ? selectedAddOns.join(", ")
+                    : "None selected",
             step: BOOKING_STEPS.ADD_ONS,
         },
-    ] as const;
+    ];
 
     return (
         <div className={styles.formStep}>
             <h2>Review your booking</h2>
+
             <p className={styles.supportingText}>
-                Review the details of your booking below to make sure everything looks correct.
-                If you'd like to make any changes, you can go back before submitting your request.
+                Check your appointment details before submitting. You can
+                return to any step if something needs to be changed.
             </p>
 
             <div className={styles.reviewTable}>
-                {formFields.map(({ key, label, step }) => (
-                    <div key={key} className={styles.reviewItem}>
+                {reviewItems.map(({ label, value, step }) => (
+                    <div className={styles.reviewItem} key={label}>
                         <div className={styles.reviewContent}>
                             <h3>{label}</h3>
-                            <p>
-                                {Array.isArray(booking[key])
-                                    ? booking[key].join(", ") || "None selected"
-                                    : booking[key]}
-                            </p>
+                            <p>{value}</p>
                         </div>
 
                         <button
                             type="button"
                             className={styles.editLink}
                             onClick={() => editStep(step)}
+                            aria-label={`Edit ${label.toLowerCase()}`}
                         >
                             Edit
                         </button>
                     </div>
                 ))}
             </div>
-
-            <PricePreview
-                cleaning={cleaning}
-                addOns={addOns}
-                subtotal={subtotal}
-                tax={tax}
-                totalPrice={totalPrice}
-            />
 
             {submitError && (
                 <ErrorMessage>
@@ -120,15 +144,13 @@ export default function ReviewStep({
                 >
                     Back
                 </Button>
-                <Button
-                    variant="primary"
-                    type="submit"
-                >
+
+                <Button variant="primary" type="submit">
                     {isSubmitting
                         ? "Submitting booking..."
                         : "Submit booking"}
                 </Button>
             </div>
         </div>
-    )
+    );
 }

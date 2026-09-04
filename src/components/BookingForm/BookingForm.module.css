@@ -3,14 +3,6 @@
     --booking-input-border: rgb(54 95 115 / 38%);
     --booking-focus-ring: rgb(54 95 115 / 20%);
 
-    /*
-     * Temporary aliases used by ProgressIndicator and PricePreview.
-     * We can update those component files separately afterward.
-     */
-    --accent-color: var(--brand-color);
-    --border-color-light: var(--booking-border);
-    --surface-secondary: var(--surface-card);
-
     box-sizing: border-box;
     display: block;
     width: 100%;
@@ -109,18 +101,6 @@
     margin-bottom: 0;
 }
 
-/* Central sidebar price preview */
-
-.bookingSidebar aside {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 1.25rem;
-    background: var(--surface-card);
-    border: 0.063rem solid var(--booking-border);
-    border-radius: 1rem;
-    box-shadow: none;
-}
-
 /* Main form and standalone panels */
 
 .formPanel,
@@ -138,14 +118,6 @@
 .standalonePanel {
     max-width: 42rem;
     margin-inline: auto;
-}
-
-/*
- * Temporarily hide the older PricePreview components rendered
- * inside Cleaning Option, Add-ons, and Review.
- */
-.formPanel aside {
-    display: none;
 }
 
 /* Form fields */
@@ -573,10 +545,6 @@
         padding: 0.25rem 0 1.5rem;
         border-right: 0;
         border-bottom: 0.063rem solid var(--booking-border);
-    }
-
-    .bookingSidebar aside {
-        display: block;
     }
 
     .formPanel {

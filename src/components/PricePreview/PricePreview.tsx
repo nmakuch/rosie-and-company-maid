@@ -1,8 +1,8 @@
 import styles from "./PricePreview.module.css";
 
 import type {
-    CleaningOption,
     AddOnOption,
+    CleaningOption,
 } from "../BookingForm/stepTypes";
 
 type PricePreviewProps = {
@@ -20,51 +20,63 @@ export default function PricePreview({
     tax,
     totalPrice,
 }: PricePreviewProps) {
+    const hasEstimate = Boolean(cleaning);
+
     return (
         <aside
             className={styles.pricePreview}
             aria-labelledby="price-preview-heading"
         >
+            <p
+                className={styles.heading}
+                id="price-preview-heading"
+            >
+                Price estimate
+            </p>
 
-            {(cleaning || addOns.length > 0) && (
-                <div className={styles.priceAddition}>
-                    {cleaning && (
+            {!hasEstimate ? (
+                <p className={styles.emptyState}>
+                    Choose a cleaning option to see your estimated total.
+                </p>
+            ) : (
+                <>
+                    <div className={styles.selectedItems}>
+                        {cleaning && (
+                            <div className={styles.priceRow}>
+                                <span>{cleaning.label}</span>
+                                <span>${cleaning.price.toFixed(2)}</span>
+                            </div>
+                        )}
+
+                        {addOns.map((addOn) => (
+                            <div
+                                className={styles.priceRow}
+                                key={addOn.value}
+                            >
+                                <span>{addOn.label}</span>
+                                <span>${addOn.price.toFixed(2)}</span>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className={styles.calculation}>
                         <div className={styles.priceRow}>
-                            <span>{cleaning.label}</span>
-                            <span>${cleaning.price.toFixed(2)}</span>
+                            <span>Subtotal</span>
+                            <span>${subtotal.toFixed(2)}</span>
                         </div>
-                    )}
-                    {addOns.map((addOn) => (
-                        <div
-                            key={addOn.value}
-                            className={styles.priceRow}
-                        >
-                            <span>+ {addOn.label}</span>
-                            <span>${addOn.price.toFixed(2)}</span>
-                        </div>
-                    ))}
-                </div>
-            )}
 
-            {(cleaning || addOns.length > 0) && (
-                <div className={styles.priceAddition}>
-                    <div className={styles.priceRow}>
-                        <span>Subtotal</span>
-                        <span>${subtotal.toFixed(2)}</span>
+                        <div className={styles.priceRow}>
+                            <span>HST</span>
+                            <span>${tax.toFixed(2)}</span>
+                        </div>
                     </div>
 
-                    <div className={styles.priceRow}>
-                        <span>HST (13%)</span>
-                        <span>${tax.toFixed(2)}</span>
+                    <div className={styles.totalRow}>
+                        <span>Estimated total</span>
+                        <span>${totalPrice.toFixed(2)}</span>
                     </div>
-                </div>
+                </>
             )}
-
-
-            <div className={styles.totalRow}>
-                <span>Total</span>
-                <span>${totalPrice.toFixed(2)}</span>
-            </div>
         </aside>
     );
 }

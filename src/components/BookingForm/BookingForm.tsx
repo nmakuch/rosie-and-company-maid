@@ -304,11 +304,6 @@ export default function BookingForm() {
                                 onNext={nextStep}
                                 cleaningType={cleaningType}
                                 options={cleaningOptions}
-                                cleaning={cleaning}
-                                addOns={pricedAddOns}
-                                subtotal={subtotal}
-                                tax={tax}
-                                totalPrice={totalPrice}
                             />
                         )}
 
@@ -318,11 +313,6 @@ export default function BookingForm() {
                                 errors={errors}
                                 onBack={backStep}
                                 onNext={nextStep}
-                                cleaning={cleaning}
-                                addOns={pricedAddOns}
-                                subtotal={subtotal}
-                                tax={tax}
-                                totalPrice={totalPrice}
                             />
                         )}
 
@@ -331,11 +321,6 @@ export default function BookingForm() {
                                 booking={booking}
                                 onBack={backStep}
                                 editStep={editStep}
-                                cleaning={cleaning}
-                                addOns={pricedAddOns}
-                                subtotal={subtotal}
-                                tax={tax}
-                                totalPrice={totalPrice}
                                 isSubmitting={isSubmitting}
                                 submitError={submitError}
                             />

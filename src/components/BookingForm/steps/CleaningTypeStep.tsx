@@ -1,43 +1,51 @@
-import styles from "../BookingForm.module.css";
+import type { ChangeEvent } from "react";
+
 import Button from "../../Button/Button";
 import ErrorMessage from "../../ErrorMessage/ErrorMessage";
+import styles from "../BookingForm.module.css";
 
 import type { CleaningTypeStepProps } from "../stepTypes";
 
 export default function CleaningTypeStep({
     register,
     errors,
-    onNext,
     onBack,
-    setValue
+    onNext,
+    setValue,
 }: CleaningTypeStepProps) {
-
     const cleaningTypeField = register("cleaningType");
 
     const handleCleaningTypeChange = (
-        event: React.ChangeEvent<HTMLInputElement>
+        event: ChangeEvent<HTMLInputElement>
     ) => {
         cleaningTypeField.onChange(event);
 
         setValue("cleaningOption", "", {
             shouldValidate: false,
+            shouldDirty: true,
         });
     };
 
     return (
         <div className={styles.formStep}>
-            <h2>What kind of cleaning plan would you like?</h2>
+            <h2>How would you like to book?</h2>
 
             <p className={styles.supportingText}>
-                Choose the cleaning plan that works best for your home, whether
-                that's an hourly session or a pre-set package.
+                Choose between a flexible hourly cleaning or a fixed-price
+                package designed around the level of cleaning you need.
             </p>
 
-            <fieldset className={styles.inputContainer}>
-                <legend>Choose your plan type</legend>
+            <fieldset
+                className={styles.inputContainer}
+                aria-describedby="cleaning-type-hint"
+            >
+                <legend>Choose a cleaning plan</legend>
 
-                <p className={styles.hintText}>
-                    Hourly sessions offer flexibility, while pre-set packages provide a complete cleaning at a fixed price.
+                <p
+                    className={styles.hintText}
+                    id="cleaning-type-hint"
+                >
+                    You&apos;ll choose a duration or package on the next step.
                 </p>
 
                 {errors.cleaningType && (
@@ -65,7 +73,11 @@ export default function CleaningTypeStep({
 
                             <span className={styles.selectionContent}>
                                 <span className={styles.selectionTitle}>
-                                    Hourly
+                                    Hourly cleaning
+                                </span>
+
+                                <span className={styles.selectionHint}>
+                                    Choose the number of cleaning hours you need.
                                 </span>
                             </span>
                         </label>
@@ -89,7 +101,11 @@ export default function CleaningTypeStep({
 
                             <span className={styles.selectionContent}>
                                 <span className={styles.selectionTitle}>
-                                    Pre-set package
+                                    Fixed-price package
+                                </span>
+
+                                <span className={styles.selectionHint}>
+                                    Choose a package based on the cleaning level.
                                 </span>
                             </span>
                         </label>
@@ -115,5 +131,5 @@ export default function CleaningTypeStep({
                 </Button>
             </div>
         </div>
-    )
+    );
 }
