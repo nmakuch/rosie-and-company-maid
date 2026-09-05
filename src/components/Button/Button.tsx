@@ -13,7 +13,7 @@ export default function Button({
     children,
     variant,
     to,
-    type,
+    type = "button",
     onClick,
 }: ButtonProps) {
     if (to) {

@@ -48,9 +48,11 @@ export default function BookingForm() {
         watch,
         setValue,
         reset,
+        clearErrors,
         formState: { errors },
     } = useForm<BookingFormData>({
         resolver: zodResolver(bookingSchema),
+
         defaultValues: {
             fullName: "",
             email: "",
@@ -62,6 +64,9 @@ export default function BookingForm() {
             cleaningOption: "",
             addOns: [],
         },
+
+        mode: "onSubmit",
+        reValidateMode: "onChange",
     });
 
     const booking = watch();
@@ -96,13 +101,26 @@ export default function BookingForm() {
         });
     }, [step]);
 
+    const clearStepErrors = (targetStep: number) => {
+        const fields = bookingStepFields[targetStep];
+
+        if (fields) {
+            clearErrors(fields);
+        }
+    };
+
+    const goToStep = (targetStep: number) => {
+        clearStepErrors(targetStep);
+        setStep(targetStep);
+    };
+
     const startForm = () => {
-        setStep(BOOKING_STEPS.NAME);
+        goToStep(BOOKING_STEPS.NAME);
     };
 
     const editStep = (targetStep: number) => {
         setEditingStep(targetStep);
-        setStep(targetStep);
+        goToStep(targetStep);
     };
 
     const nextStep = async () => {
@@ -110,7 +128,9 @@ export default function BookingForm() {
 
         if (!fields) return;
 
-        const isValid = await trigger(fields);
+        const isValid = await trigger(fields, {
+            shouldFocus: true,
+        });
 
         if (!isValid) return;
 
@@ -121,23 +141,26 @@ export default function BookingForm() {
             editingStep === BOOKING_STEPS.CLEANING_TYPE &&
             step === BOOKING_STEPS.CLEANING_TYPE
         ) {
-            setStep(BOOKING_STEPS.CLEANING_OPTION);
+            goToStep(BOOKING_STEPS.CLEANING_OPTION);
             return;
         }
 
         if (isEditingFromReview) {
             setEditingStep(null);
-            setStep(BOOKING_STEPS.REVIEW);
+            goToStep(BOOKING_STEPS.REVIEW);
             return;
         }
 
-        setStep((currentStep) => currentStep + 1);
+        goToStep(step + 1);
     };
 
     const backStep = () => {
-        setStep((currentStep) =>
-            Math.max(BOOKING_STEPS.START, currentStep - 1)
+        const previousStep = Math.max(
+            BOOKING_STEPS.START,
+            step - 1
         );
+
+        goToStep(previousStep);
     };
 
     const onSubmit = async (data: BookingFormData) => {
@@ -192,6 +215,22 @@ export default function BookingForm() {
         }
     };
 
+    const handleFormSubmit = (
+        event: React.FormEvent<HTMLFormElement>
+    ) => {
+        event.preventDefault();
+
+        /*
+         * Mobile keyboards can trigger an implicit form submit.
+         * Only allow a full-schema submission from the review step.
+         */
+        if (step !== BOOKING_STEPS.REVIEW) {
+            return;
+        }
+
+        void handleSubmit(onSubmit)(event);
+    };
+
     const startOver = () => {
         reset();
         setEditingStep(null);
@@ -201,7 +240,8 @@ export default function BookingForm() {
     return (
         <form
             className={styles.bookingForm}
-            onSubmit={handleSubmit(onSubmit)}
+            onSubmit={handleFormSubmit}
+            noValidate
         >
             {showBookingLayout ? (
                 <div className={styles.bookingLayout}>
@@ -236,7 +276,6 @@ export default function BookingForm() {
                     </aside>
 
                     <div className={styles.formPanel}>
-
                         {step === BOOKING_STEPS.START && (
                             <StartStep onStart={startForm} />
                         )}
